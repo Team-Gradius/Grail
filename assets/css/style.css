@@ -58,12 +58,13 @@ body {
 .diary-wrapper {
 	width: 90%;
 	max-width: 700px;
-	margin: 20px auto;
+	margin: 20px auto 50px auto;
 	height: auto;
 }
 
 .diary-item {
 	width: 100%;
+	user-select: none;
 	border: 2px solid #999;
 	height: 40px;
 	border-radius: 5px;
@@ -84,6 +85,7 @@ body {
 	right: 10px;
 	cursor: pointer;
 	height: 35px;
+	user-select: none;
 	position: absolute;
 	text-align: center;
 	line-height: 35px;
@@ -111,7 +113,7 @@ body {
 
 .diary-item:hover {
 	cursor: pointer;
-	border-color: red;
+	border-color: #FF5722;
 }
 
 .diary-item-title {
@@ -123,11 +125,34 @@ body {
 	margin-left: 20px;
 }
 
+.part-solved {
+	border-color: #4CAF50 !important;
+}
+
+.part-solved:hover {
+	border-color: #2E7D32 !important;
+}
+
 .part-disabled {
 	cursor: not-allowed;
 	opacity: 0.6;
 	filter: grayscale(100%);
 }
+
+.unclickable-part .part-solved:hover {
+	border-color: #4CAF50 !important;
+}
+
+.unclickable-part {
+	cursor: default !important;
+	border-color: #4CAF50 !important;
+}
+
+.unclickable-part:hover {
+	cursor: default !important;
+	border-color: #4CAF50 !important;
+}
+
 
 .level-locked {
 	color: grey;
@@ -147,6 +172,13 @@ body {
 .bonus-disabled:hover {
 	cursor: not-allowed !important;
 	border-color: #999 !important;
+}
+
+.score-awarded {
+	position: absolute;
+	right: 45px;
+	color: gold;
+	top: 14px;
 }
 
 .lock-icon {
@@ -186,6 +218,27 @@ body {
 	user-select: none;
 }
 
+.clue-title {
+	margin-top: 50px;
+	font-size: 27px;
+	color: white;
+	text-align: center;
+	text-transform: uppercase;
+	user-select: none;
+}
+
+.clue-text-smaller {
+	text-align: center;
+	line-height: 20px;
+	user-select: none;
+	text-transform: uppercase;
+	margin-top: 10px;
+	margin-left: 20px;
+	font-size: 12px;
+	margin-right: 20px;
+	margin-bottom: 50px;
+}
+
 .diary-title {
 	margin-top: 50px;
 	font-size: 27px;
@@ -212,7 +265,7 @@ input::-webkit-inner-spin-button {
 
 .standard-input {
 	height: 45px;
-	width: 250px;
+	width: 280px;
 	background-color: white;
 	font-size: 19px;
 	border: none;

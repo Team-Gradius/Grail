@@ -11,9 +11,9 @@
 		</div>		
 
 		<p class="clue-text">
-			In your knowledge and Charity of others
-			<br>the first integer found will bring Hope
-			<br>keep your Faith and apply both the numbers
+			In your knowledge and <span style="color: #f3f7db;">Charity</span> of others
+			<br>the first integer found will bring <span style="color: #f3f7db;">Hope</span>
+			<br>keep your <span style="color: #f3f7db;">Faith</span> and apply both the numbers
 			<br>The second within Deep Thought’s scope
 		</p>
 

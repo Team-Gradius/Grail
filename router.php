@@ -16,6 +16,9 @@
 		} else if ($url_base == '/048A3A56B014940E73F89C2F98DB2C06')  {
 			page('first_clue');
 
+		} else if ($url_base == '/clue/level-one')  {
+			page('level_one/clue');
+
 		// Other
 		} else {
 			page('error');

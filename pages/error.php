@@ -7,7 +7,7 @@
 	<body>
 			
 			<div onclick="Grail.open('')" class="sb-corner-right">
-				<img class="sb-diary-icon" src="assets/img/home.png">
+				<img class="sb-diary-icon" src="/assets/img/home.png">
 			</div>
 	
 			<div class="error-title">404</div>
