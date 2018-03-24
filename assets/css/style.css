@@ -29,6 +29,172 @@ body {
 	font-family: 'Press Start 2P';
 }
 
+.popup-wrapper {
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	background-color: rgb(0,0,0,0.3);
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+}
+
+.popup {
+	position: relative;
+	width: 80%;
+	max-width: 500px;
+	background-color: white;
+	text-align: left;
+	top: 50%;
+	transform: translateY(-80%);
+	left: 0;
+	right: 0;
+	display: block;
+	margin: auto;
+	color: black;
+}
+
+.diary-wrapper {
+	width: 90%;
+	max-width: 700px;
+	margin: 20px auto;
+	height: auto;
+}
+
+.diary-item {
+	width: 100%;
+	border: 2px solid #999;
+	height: 40px;
+	border-radius: 5px;
+	position: relative;
+	margin: 10px auto;
+}
+
+.diary-sub {
+	position: relative;
+	font-size: 23px;
+	margin-left: 20px;
+	text-align: left;
+	margin-top: 80px;
+}
+
+.clue-button {
+	top: -10px;
+	right: 10px;
+	cursor: pointer;
+	height: 35px;
+	position: absolute;
+	text-align: center;
+	line-height: 35px;
+	width: 100px;
+	text-transform: uppercase;
+	display: inline-block;
+	font-size: 14px;
+	box-shadow: 2px 2px 0px purple;
+	background-color: #ae00ff;
+	transform: translate(0px, 0px);
+	transition: all 0.1s;
+}
+
+.clue-button:hover {
+	transform: translate(1px, 1px);
+	box-shadow: 1px 1px purple;
+	transition: all 0.1s;
+}
+
+.clue-button:active {
+	transform: translate(2px, 2px);
+	box-shadow: 0px 0px purple;
+	transition: all 0.1s;
+}
+
+.diary-item:hover {
+	cursor: pointer;
+	border-color: red;
+}
+
+.diary-item-title {
+	font-size: 15px;
+	position: relative;
+	text-transform: uppercase;
+	top: 0;
+	text-align: left;
+	margin-left: 20px;
+}
+
+.part-disabled {
+	cursor: not-allowed;
+	opacity: 0.6;
+	filter: grayscale(100%);
+}
+
+.level-locked {
+	color: grey;
+}
+
+.part-disabled:hover {
+	cursor: not-allowed !important;
+	border-color: #999 !important;
+}
+
+.bonus-disabled {
+	cursor: not-allowed;
+	opacity: 0.6;
+	filter: grayscale(100%);
+}
+
+.bonus-disabled:hover {
+	cursor: not-allowed !important;
+	border-color: #999 !important;
+}
+
+.lock-icon {
+	width: 24px;
+	position: absolute;
+	right: 10px;
+	top: 9px;
+	height: 24px;
+}
+
+.diary-close {
+	position: absolute;
+	right: 15px;
+	font-size: 30px;
+	top: 15px;
+}
+
+.popup-title {
+	padding-top: 20px;
+	margin-left: 20px;
+	font-size: 30px;
+}
+
+.popup-text {
+	margin-right: 25px;
+	margin-left: 25px;
+	padding-bottom: 30px;
+	line-height: 20px;
+}
+
+.diary-message {
+	text-align: center;
+	margin-left: 10px;
+	margin-right: 10px;
+	font-size: 16px;
+	line-height: 25px;
+	user-select: none;
+}
+
+.diary-title {
+	margin-top: 50px;
+	font-size: 27px;
+	color: #2196f3;
+	text-align: center;
+	text-transform: uppercase;
+	user-select: none;
+}
+
 .sb-name {
 	padding-right: 120px;
 	text-align: right !important;
