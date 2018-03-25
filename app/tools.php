@@ -65,13 +65,6 @@
 		}
 	}
 
-	function getPuzzleStatus($item) {
-		$mysqli = mysqli_connect("localhost","root","root","grail");
-		$username = $mysqli->real_escape_string($_COOKIE['_aun']);
-		$data = $mysqli->query("SELECT $item FROM `players` WHERE `username` = '$username'");
-		return $data->fetch_object()->$item;  
-	}
-
 	function getPuzzleScore($item) {
 		$mysqli = mysqli_connect("localhost","root","root","grail");
 		$username = $mysqli->real_escape_string($_COOKIE['_aun']);
