@@ -49,7 +49,7 @@
 		$mysqli = mysqli_connect("localhost","root","root","grail");
 		$username = $mysqli->real_escape_string($_COOKIE['_aun']);
 		$data = $mysqli->query("SELECT `totalScore` FROM `players` WHERE `username` = '$username'");
-		echo $data->fetch_object()->totalScore;  
+		return $data->fetch_object()->totalScore;  
 	}
 
 	function getCurrentRank() {
@@ -59,7 +59,7 @@
 		$i = 1;
 		while ($info = $data->fetch_assoc()) {
 			if ($info['username'] == $username) {
-				echo addSuffix($i);
+				return addSuffix($i);
 			}
 			$i++;
 		}

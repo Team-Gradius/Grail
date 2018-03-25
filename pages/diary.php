@@ -18,8 +18,8 @@
 			<h1 class="diary-title">Grail Diary</h1>
 
 			<h3 class="diary-message">
-				Your Score is <span style="color: gold;"><?php getCurrentScore() ?></span>
-				<br>Current Rank <span style="color: gold;"><?php getCurrentRank() ?></span>
+				Your Score is <span style="color: gold;"><?php echo getCurrentScore() ?></span>
+				<br>Current Rank <span style="color: gold;"><?php echo getCurrentRank() ?></span>
 			</h3>
 
 			<div class="diary-wrapper">
@@ -32,7 +32,7 @@
 				
 				<div onclick="Grail.open('048A3A56B014940E73F89C2F98DB2C06')" class="diary-item part-solved">
 					<h3 class="diary-item-title">126</h3>
-					<div style="right: 10px" class="score-awarded"><?php echo getPuzzleStatus('first_puzzle') ?></div>
+					<div style="right: 10px" class="score-awarded"><?php echo getPuzzleScore('first_puzzle') ?></div>
 				</div>
 
 				<h1 class="diary-sub">Level 1 <div onclick="Grail.open('clue/level-one')" class="clue-button">Clue</div></h1>
@@ -62,7 +62,17 @@
 				</div>
 
 
-				<h1 class="diary-sub level-locked">Level 2 <div class="clue-button disabled-state">Clue</div></h1>
+				<h1 class="diary-sub level-locked">Level 2 
+					<?php 
+
+					if (getCurrentScore() == 1500) {
+						echo '<div onclick="Grail.open(\'clue/level-two\')" class="clue-button">Clue</div>';
+					} else {
+						echo '<div class="clue-button disabled-state">Clue</div>';
+					}
+
+					 ?>
+				</h1>
 
 				<div class="diary-item <?php getPuzzleStyle('two_part_one'); ?>">
 					<h3 class="diary-item-title">Part One</h3>
@@ -88,7 +98,17 @@
 					<?php getPuzzleLock('two_bonus'); ?>
 				</div>
 
-				<h1 class="diary-sub level-locked">Level 3 <div class="clue-button disabled-state">Clue</div></h1>
+				<h1 class="diary-sub level-locked">Level 3 
+					<?php 
+
+					if (getCurrentScore() == 15000) {
+						echo '<div onclick="Grail.open(\'clue/level-three\')" class="clue-button">Clue</div>';
+					} else {
+						echo '<div class="clue-button disabled-state">Clue</div>';
+					}
+
+					 ?>
+				</h1>
 
 				<div class="diary-item <?php getPuzzleStyle('three_part_one'); ?>">
 					<h3 class="diary-item-title">Part One</h3>
