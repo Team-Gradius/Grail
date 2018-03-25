@@ -82,14 +82,6 @@ window.addEventListener("keydown", function(e) {
 }, false);
 
 function konamiComplete() {
-	// $.ajax({
-		// 	url: '',
-		// 	type: 'POST',
-		// 	data: {},
-		// 	success: function(result) {
-
-		// 	}
-	// });
 	$('body').prepend('<div class="kc-success-black"></div><div class="kc-success-red"></div>');
 	setTimeout(function() {
 		$('body').css('overflow', 'hidden');
@@ -141,21 +133,23 @@ $bronze_count = 0;
 
 $bronze_consist = false;
 
-for (var i = 1; i <= 50; i++) {
+$('tr').each(function(i) {
+	if (i == 0)
+        return true;
 	if ($gold_count < 10) {
 		if ($gold_count == 0) {
-			$item = '<tr style="color: '+$epic+'"><td>2nd</td><td>55,000</td><td class="sb-name"><span class="sb-name-value">Kinago</span></td></tr>';
+			$(this).css('color', $epic);
 		} else {
-			$item = '<tr style="color: '+$gold+'"><td>2nd</td><td>55,000</td><td class="sb-name"><span class="sb-name-value">Kinago</span></td></tr>';
+			$(this).css('color', $gold);
 			$gold = getTintedColor($gold, $gold_count * -3);
 		}
 		$gold_count++;
 	} else if ($silver_count < 10) {
-		$item = '<tr style="color: '+$silver+'"><td>2nd</td><td>55,000</td><td class="sb-name"><span class="sb-name-value">Kinago</span></td></tr>';
+		$(this).css('color', $silver);
 		$silver = getTintedColor($silver, $silver_count * -3);
 		$silver_count++;
 	} else {
-		$item = '<tr style="color: '+$bronze+'"><td>2nd</td><td>55,000</td><td class="sb-name"><span class="sb-name-value">Kinago</span></td></tr>';
+		$(this).css('color', $bronze);
 		if ($bronze_consist == false)
 			$bronze = getTintedColor($bronze, $bronze_count * -2);
 
@@ -163,5 +157,4 @@ for (var i = 1; i <= 50; i++) {
 			$bronze_consist = true;
 		$bronze_count++;
 	}
-	$('table').append($item);
-}
+});

@@ -6,9 +6,13 @@
 	</head>
 	<body>
 
-		<div onclick="Grail.open('')" class="sb-corner-right">
-			<img class="sb-diary-icon" src="/assets/img/home.png">
-		</div>		
+		<?php 
+			if (authSuccess()) {
+				echo '<div onclick="Grail.open(\'diary\')" class="sb-corner-right"><img class="sb-diary-icon" src="/assets/img/diary.png"></div>';
+			} else {
+				echo '<div onclick="Grail.open(\'\')" class="sb-corner-right"><img class="sb-diary-icon" src="/assets/img/home.png"></div>';
+			}
+		?>	
 
 		<p class="clue-text">
 			In your knowledge and <span style="color: #f3f7db;">Charity</span> of others

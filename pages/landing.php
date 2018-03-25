@@ -14,7 +14,7 @@
 			<?php 
 				if (authSuccess()) {
 					echo '<div onclick="Grail.logout()" class="sb-corner-left">Logout</div>';
-					echo '<div onclick="Grail.open("diary")" class="sb-corner-right"><img class="sb-diary-icon" src="/assets/img/diary.png"></div>';
+					echo '<div onclick="Grail.open(\'diary\')" class="sb-corner-right"><img class="sb-diary-icon" src="/assets/img/diary.png"></div>';
 				} else {
 					echo '<div onclick="Grail.login()" class="sb-corner-left">Login</div>';
 				}
@@ -42,18 +42,31 @@
 					<th style="width: 30%">Score</th>
 					<th style="width: 40%;">Name</th>
 				</tr>
-				<tr style="color: #ffd700">
-					<td>1st</td>
-					<td>55,000</td>
+
+				<?php 
+
+				$mysqli = mysqli_connect("localhost","root","root","grail");
+				$username = $mysqli->real_escape_string($_COOKIE['_aun']);
+				$data = $mysqli->query("SELECT * FROM `players` WHERE 1 ORDER BY `totalScore` DESC, `dateCreated` ASC");
+				
+				$i = 1;
+				while ($info = $data->fetch_assoc()) {
+					echo '<tr>
+					<td>'.addSuffix($i).'</td>
+					<td>'.number_format($info['totalScore']).'</td>
 					<td class="sb-name">
-						<span class="sb-name-value">Robbie</span>
+						<span class="sb-name-value">'.$info['username'].'</span>
 						<div class="score-icons">
 							<img draggable="false" class="level-icon" src="/assets/img/lvlOne.png">
 							<img draggable="false" class="level-icon" src="/assets/img/lvlTwo.png">
 							<img draggable="false" class="level-icon" src="/assets/img/lvlThree.png">
 						</div>
 					</td>
-				</tr>
+					</tr>';
+					$i++;
+				}
+
+				 ?>
 			</table>
 
 			<div class="footer">&copy; Konami 1983</div>

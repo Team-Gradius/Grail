@@ -49,7 +49,7 @@
 		$mysqli = mysqli_connect("localhost","root","root","grail");
 		$username = $mysqli->real_escape_string($_COOKIE['_aun']);
 		$data = $mysqli->query("SELECT `totalScore` FROM `players` WHERE `username` = '$username'");
-		echo $data->current_field;
+		echo $data->fetch_object()->totalScore;  
 	}
 
 	function getCurrentRank() {
@@ -63,6 +63,13 @@
 			}
 			$i++;
 		}
+	}
+
+	function getPuzzleStatus($item) {
+		$mysqli = mysqli_connect("localhost","root","root","grail");
+		$username = $mysqli->real_escape_string($_COOKIE['_aun']);
+		$data = $mysqli->query("SELECT $item FROM `players` WHERE `username` = '$username'");
+		return $data->fetch_object()->$item;  
 	}
 
  ?>
