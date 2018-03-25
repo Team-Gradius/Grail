@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>Grail! - Scoreboard</title>
-		<?php include(__dir__.'/../blades/head.blade.html'); ?>
+		<?php include($_SERVER['DOCUMENT_ROOT'].'/blades/head.blade.html'); ?>
 	</head>
 	<body>
 
@@ -14,7 +14,7 @@
 			<div onclick="Grail.logout()" class="sb-corner-left">Logout</div>
 			
 			<div onclick="Grail.open('diary')" class="sb-corner-right">
-				<img class="sb-diary-icon" src="assets/img/diary.png">
+				<img class="sb-diary-icon" src="/assets/img/diary.png">
 			</div>
 
 			<div class="kc-combo"></div>
@@ -28,7 +28,7 @@
 				<div data-key="66" style="padding-left: 3px" class="kc-combo-button">B</div>
 			</div>
 
-			<img draggable="false" src="assets/img/logo.svg" class="logo">
+			<img draggable="false" src="/assets/img/logo.svg" class="logo">
 			<h1 class="sb-title">High Scores</h1>
 
 			<table class="sb-table">
@@ -43,9 +43,9 @@
 					<td class="sb-name">
 						<span class="sb-name-value">Robbie</span>
 						<div class="score-icons">
-							<img draggable="false" class="level-icon" src="assets/img/lvlOne.png">
-							<img draggable="false" class="level-icon" src="assets/img/lvlTwo.png">
-							<img draggable="false" class="level-icon" src="assets/img/lvlThree.png">
+							<img draggable="false" class="level-icon" src="/assets/img/lvlOne.png">
+							<img draggable="false" class="level-icon" src="/assets/img/lvlTwo.png">
+							<img draggable="false" class="level-icon" src="/assets/img/lvlThree.png">
 						</div>
 					</td>
 				</tr>
@@ -55,8 +55,8 @@
 					<td class="sb-name">
 						<span class="sb-name-value">Kinago</span>
 						<div class="score-icons">
-							<img draggable="false" class="level-icon" src="assets/img/lvlOne.png">
-							<img draggable="false" class="level-icon" src="assets/img/lvlTwo.png">
+							<img draggable="false" class="level-icon" src="/assets/img/lvlOne.png">
+							<img draggable="false" class="level-icon" src="/assets/img/lvlTwo.png">
 						</div>
 					</td>
 				</tr>
@@ -66,7 +66,7 @@
 					<td class="sb-name">
 						<span class="sb-name-value">B34Rs</span>
 						<div class="score-icons">
-							<img draggable="false" class="level-icon" src="assets/img/lvlOne.png">
+							<img draggable="false" class="level-icon" src="/assets/img/lvlOne.png">
 						</div>
 					</td>
 				</tr>
@@ -84,7 +84,7 @@
 		</div>
 
 	</body>
-	<?php include(__dir__.'/../blades/scripts.blade.html'); ?>
+	<?php include($_SERVER['DOCUMENT_ROOT'].'/blades/scripts.blade.html'); ?>
 	<script src="assets/js/scoreboard.js"></script>
 	<script type="text/javascript">
 	</script>

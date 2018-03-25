@@ -281,6 +281,24 @@ input::-webkit-inner-spin-button {
 	color: lightgrey;
 }
 
+.detail-input {
+	height: 45px;
+	width: 340px;
+	background-color: white;
+	font-size: 14px;
+	border: none;
+	box-shadow: 3px 3px 0px lightgrey;
+	-webkit-appearance: none;
+	outline: none;
+	/*text-transform: uppercase;*/
+	text-align: center;
+	font-family: 'Press Start 2P';
+}
+
+.detail-input::placeholder {
+	color: lightgrey;
+}
+
 .submit-button {
 	transition: all 0.25s;
 	margin: 30px auto;
@@ -330,6 +348,26 @@ input::-webkit-inner-spin-button {
 	opacity: 0.6;
 	filter: grayscale(100%);
 	transform: translate(0px, 0px);
+}
+
+.submit-failed {
+	display: none;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 13px;
+	color: red;
+	line-height: 20px;
+	margin: -15px 20px 0px 20px;
+}
+
+.standard-text {
+	text-align: center;
+	line-height: 30px;
+	user-select: none;
+	text-transform: uppercase;
+	margin: 30px auto 30px auto;
+	padding: 0px 20px 0px 20px;
+	max-width: 400px;
 }
 
 .clue-text {
@@ -593,7 +631,15 @@ input::-webkit-inner-spin-button {
 		margin-top: 30px;
 	}
 
+	.clue-title {
+		font-size: 23px;
+	}
+
 	.clue-text {
+		font-size: 15px;
+	}
+
+	.standard-text {
 		font-size: 15px;
 	}
 

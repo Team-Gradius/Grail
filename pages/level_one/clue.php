@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>Grail! - Level One Clue</title>
-		<?php include(__dir__.'/../../blades/head.blade.html'); ?>
+		<?php include($_SERVER['DOCUMENT_ROOT'].'/blades/head.blade.html'); ?>
 	</head>
 	<body>
 
@@ -45,5 +45,5 @@
 		</div><br><br>
 
 	</body>
-	<?php include(__dir__.'/../../blades/scripts.blade.html'); ?>
+	<?php include($_SERVER['DOCUMENT_ROOT'].'/blades/scripts.blade.html'); ?>
 </html>

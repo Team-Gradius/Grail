@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>Grail! - Error</title>
-		<?php include(__dir__.'/../blades/head.blade.html'); ?>
+		<?php include($_SERVER['DOCUMENT_ROOT'].'/blades/head.blade.html'); ?>
 	</head>
 	<body>
 			
@@ -15,5 +15,5 @@
 		</div>
 
 	</body>
-	<?php include(__dir__.'/../blades/scripts.blade.html'); ?>
+	<?php include($_SERVER['DOCUMENT_ROOT'].'/blades/scripts.blade.html'); ?>
 </html>
