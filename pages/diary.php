@@ -36,116 +36,82 @@
 				</div>
 
 				<h1 class="diary-sub">Level 1 <div onclick="Grail.open('clue/level-one')" class="clue-button">Clue</div></h1>
-				<?php 
 
-					if (getPuzzleStatus('one_part_one') == 0) {
-						echo '<div class="diary-item part-disabled">
-								<h3 class="diary-item-title">Part One</h3>
-								<img draggable="false" class="lock-icon" src="/assets/img/locked.png">
-							</div>';
-					} else if (getPuzzleStatus('one_part_one') == 1) {
-						echo '<div class="diary-item">
-								<h3 class="diary-item-title">Part One</h3>
-								<img draggable="false" class="lock-icon" src="/assets/img/unlocked.png">
-							</div>';
-					} else {
-						echo '<div class="diary-item part-solved">
-								<h3 class="diary-item-title">Part One</h3>
-								<div class="score-awarded">'.getPuzzleStatus('one_part_one').'</div>
-								<img draggable="false" class="lock-icon" src="/assets/img/unlocked.png">
-							</div>';
-					}
+				<div class="diary-item <?php getPuzzleStyle('one_part_one'); ?>">
+					<h3 class="diary-item-title">Part One</h3>
+					<div class="score-awarded"><?php getPuzzleScore('one_part_one'); ?></div>
+					<?php getPuzzleLock('one_part_one'); ?>
+				</div>
 
-					if (getPuzzleStatus('one_part_two') == 0) {
-						echo '<div class="diary-item part-disabled">
-								<h3 class="diary-item-title">Part Two</h3>
-								<img draggable="false" class="lock-icon" src="/assets/img/locked.png">
-							</div>';
-					} else if (getPuzzleStatus('one_part_two') == 1) {
-						echo '<div class="diary-item">
-								<h3 class="diary-item-title">Part Two</h3>
-								<img draggable="false" class="lock-icon" src="/assets/img/unlocked.png">
-							</div>';
-					} else {
-						echo '<div class="diary-item part-solved">
-								<h3 class="diary-item-title">Part Two</h3>
-								<div class="score-awarded">'.getPuzzleStatus('one_part_two').'</div>
-								<img draggable="false" class="lock-icon" src="/assets/img/unlocked.png">
-							</div>';
-					}
+				<div class="diary-item <?php getPuzzleStyle('one_part_two'); ?>">
+					<h3 class="diary-item-title">Part Two</h3>
+					<div class="score-awarded"><?php getPuzzleScore('one_part_two'); ?></div>
+					<?php getPuzzleLock('one_part_two'); ?>
+				</div>
 
-					if (getPuzzleStatus('one_part_three') == 0) {
-						echo '<div class="diary-item part-disabled">
-								<h3 class="diary-item-title">Part Three</h3>
-								<img draggable="false" class="lock-icon" src="/assets/img/locked.png">
-							</div>';
-					} else if (getPuzzleStatus('one_part_three') == 1) {
-						echo '<div class="diary-item">
-								<h3 class="diary-item-title">Part Three</h3>
-								<img draggable="false" class="lock-icon" src="/assets/img/unlocked.png">
-							</div>';
-					} else {
-						echo '<div class="diary-item part-solved">
-								<h3 class="diary-item-title">Part Three</h3>
-								<div class="score-awarded">'.getPuzzleStatus('one_part_three').'</div>
-								<img draggable="false" class="lock-icon" src="/assets/img/unlocked.png">
-							</div>';
-					}
+				<div class="diary-item <?php getPuzzleStyle('one_part_three'); ?>">
+					<h3 class="diary-item-title">Part Three</h3>
+					<div class="score-awarded"><?php getPuzzleScore('one_part_three'); ?></div>
+					<?php getPuzzleLock('one_part_three'); ?>
+				</div>
 
-					if (getPuzzleStatus('one_bonus') == 0) {
-						echo '<div class="diary-item part-disabled">
-								<h3 class="diary-item-title">Bonus</h3>
-								<img draggable="false" class="lock-icon" src="/assets/img/locked.png">
-							</div>';
-					} else if (getPuzzleStatus('one_bonus') == 1) {
-						echo '<div class="diary-item">
-								<h3 class="diary-item-title">Bonus</h3>
-								<img draggable="false" class="lock-icon" src="/assets/img/unlocked.png">
-							</div>';
-					} else {
-						echo '<div class="diary-item part-solved">
-								<h3 class="diary-item-title">Bonus</h3>
-								<div class="score-awarded">'.getPuzzleStatus('one_bonus').'</div>
-								<img draggable="false" class="lock-icon" src="/assets/img/unlocked.png">
-							</div>';
-					}
+				<div class="diary-item <?php getPuzzleStyle('one_bonus'); ?>">
+					<h3 class="diary-item-title">Bonus</h3>
+					<div class="score-awarded"><?php getPuzzleScore('one_bonus'); ?></div>
+					<?php getPuzzleLock('one_bonus'); ?>
+				</div>
 
-				 ?>
 
 				<h1 class="diary-sub level-locked">Level 2 <div class="clue-button disabled-state">Clue</div></h1>
-				<div class="diary-item part-disabled">
+
+				<div class="diary-item <?php getPuzzleStyle('two_part_one'); ?>">
 					<h3 class="diary-item-title">Part One</h3>
-					<img draggable="false" class="lock-icon" src="/assets/img/locked.png">
+					<div class="score-awarded"><?php getPuzzleScore('two_part_one'); ?></div>
+					<?php getPuzzleLock('two_part_one'); ?>
 				</div>
-				<div class="diary-item part-disabled">
+
+				<div class="diary-item <?php getPuzzleStyle('two_part_two'); ?>">
 					<h3 class="diary-item-title">Part Two</h3>
-					<img draggable="false" class="lock-icon" src="/assets/img/locked.png">
+					<div class="score-awarded"><?php getPuzzleScore('two_part_two'); ?></div>
+					<?php getPuzzleLock('two_part_two'); ?>
 				</div>
-				<div class="diary-item part-disabled">
+
+				<div class="diary-item <?php getPuzzleStyle('two_part_three'); ?>">
 					<h3 class="diary-item-title">Part Three</h3>
-					<img draggable="false" class="lock-icon" src="/assets/img/locked.png">
+					<div class="score-awarded"><?php getPuzzleScore('two_part_three'); ?></div>
+					<?php getPuzzleLock('two_part_three'); ?>
 				</div>
-				<div class="diary-item bonus-disabled">
+
+				<div class="diary-item <?php getPuzzleStyle('two_bonus'); ?>">
 					<h3 class="diary-item-title">Bonus</h3>
-					<img draggable="false" class="lock-icon" src="/assets/img/locked.png">
+					<div class="score-awarded"><?php getPuzzleScore('two_bonus'); ?></div>
+					<?php getPuzzleLock('two_bonus'); ?>
 				</div>
 
 				<h1 class="diary-sub level-locked">Level 3 <div class="clue-button disabled-state">Clue</div></h1>
-				<div class="diary-item part-disabled">
+
+				<div class="diary-item <?php getPuzzleStyle('three_part_one'); ?>">
 					<h3 class="diary-item-title">Part One</h3>
-					<img draggable="false" class="lock-icon" src="/assets/img/locked.png">
+					<div class="score-awarded"><?php getPuzzleScore('three_part_one'); ?></div>
+					<?php getPuzzleLock('three_part_one'); ?>
 				</div>
-				<div class="diary-item part-disabled">
+
+				<div class="diary-item <?php getPuzzleStyle('three_part_two'); ?>">
 					<h3 class="diary-item-title">Part Two</h3>
-					<img draggable="false" class="lock-icon" src="/assets/img/locked.png">
+					<div class="score-awarded"><?php getPuzzleScore('three_part_two'); ?></div>
+					<?php getPuzzleLock('three_part_two'); ?>
 				</div>
-				<div class="diary-item part-disabled">
+
+				<div class="diary-item <?php getPuzzleStyle('three_part_three'); ?>">
 					<h3 class="diary-item-title">Part Three</h3>
-					<img draggable="false" class="lock-icon" src="/assets/img/locked.png">
+					<div class="score-awarded"><?php getPuzzleScore('three_part_three'); ?></div>
+					<?php getPuzzleLock('three_part_three'); ?>
 				</div>
-				<div class="diary-item bonus-disabled">
+
+				<div class="diary-item <?php getPuzzleStyle('three_bonus'); ?>">
 					<h3 class="diary-item-title">Bonus</h3>
-					<img draggable="false" class="lock-icon" src="/assets/img/locked.png">
+					<div class="score-awarded"><?php getPuzzleScore('three_bonus'); ?></div>
+					<?php getPuzzleLock('three_bonus'); ?>
 				</div>
 
 			</div>

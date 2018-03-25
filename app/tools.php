@@ -72,4 +72,35 @@
 		return $data->fetch_object()->$item;  
 	}
 
+	function getPuzzleScore($item) {
+		$mysqli = mysqli_connect("localhost","root","root","grail");
+		$username = $mysqli->real_escape_string($_COOKIE['_aun']);
+		$data = $mysqli->query("SELECT $item FROM `players` WHERE `username` = '$username'");
+		return $data->fetch_object()->$item;  
+	}
+
+	function getPuzzleStyle($item) {
+		$mysqli = mysqli_connect("localhost","root","root","grail");
+		$username = $mysqli->real_escape_string($_COOKIE['_aun']);
+		$data = $mysqli->query("SELECT $item FROM `players` WHERE `username` = '$username'");
+		$check = $data->fetch_object()->$item;  
+		if ($check == 0) {
+			echo 'part-disabled';
+		} else if ($check > 1) {
+			echo 'part-solved';
+		}
+	}
+
+	function getPuzzleLock($item) {
+		$mysqli = mysqli_connect("localhost","root","root","grail");
+		$username = $mysqli->real_escape_string($_COOKIE['_aun']);
+		$data = $mysqli->query("SELECT $item FROM `players` WHERE `username` = '$username'");
+		$check = $data->fetch_object()->$item;  
+		if ($check == 0) {
+			echo '<img draggable="false" class="lock-icon" src="/assets/img/locked.png">';
+		} else if ($check > 1) {
+			echo '<img draggable="false" class="lock-icon" src="/assets/img/unlocked.png">';
+		}
+	}
+
  ?>
