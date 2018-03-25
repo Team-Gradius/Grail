@@ -12,7 +12,6 @@
 
 		$salt = substr(uniqid(rand(), true), 16, 16);
 		$hash = crypt($password, $salt);
-		$date = date('d/m/Y H:i:s');
 
 		$data = $mysqli->query("SELECT `username` FROM `players` WHERE `username` = '$username_check'");
 
@@ -24,7 +23,7 @@
 			setcookie("_apw", $hash, 2147483647, '/');
 			setcookie("_uaa", false, -1, '/');
 
-			$query = "INSERT INTO players (username, email, passwordHash, passwordSalt, dateCreated)  VALUES (?, ?, ?, ?, ?)";
+			$query = "INSERT INTO players (username, email, passwordHash, passwordSalt)  VALUES (?, ?, ?, ?)";
 			$stmt = $mysqli->prepare($query);
 			$stmt->bind_param("sssss", $username, $email, $hash, $salt, $date);
 			$stmt->execute();

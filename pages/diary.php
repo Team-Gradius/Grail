@@ -6,25 +6,20 @@
 	</head>
 	<body>
 
-			<div onclick="Grail.logout()" class="sb-corner-left">Logout</div>
+			<?php 
+				if (authSuccess())
+					echo '<div onclick="Grail.logout()" class="sb-corner-left">Logout</div>';
+			 ?>
 			
 			<div onclick="Grail.open('')" class="sb-corner-right">
 				<img class="sb-diary-icon" src="/assets/img/home.png">
 			</div>
-
-			<!-- <div class="popup-wrapper">
-				<div class="popup">
-					<div class="diary-close">X</div>
-					<h1 class="popup-title">Welcome</h1>
-					<p class="popup-text">This is your Grail Diary, here you can monitor your progress and access unlocked levels, parts and bonuses.</p>
-				</div>	
-			</div> -->
 	
 			<h1 class="diary-title">Grail Diary</h1>
 
 			<h3 class="diary-message">
-				Your Score is <span style="color: gold;">55,000</span>
-				<br>Current Rank <span style="color: gold;">30th</span>
+				Your Score is <span style="color: gold;"><?php getCurrentScore() ?></span>
+				<br>Current Rank <span style="color: gold;"><?php getCurrentRank() ?></span>
 			</h3>
 
 			<div class="diary-wrapper">
@@ -32,7 +27,7 @@
 				<h1 style="font-size: 18px;" class="diary-sub">Starters</h1>
 				<div class="diary-item part-solved unclickable-part">
 					<h3 class="diary-item-title">Konami Code</h3>
-					<div style="right: 10px" class="score-awarded">500</div>
+					<div style="right: 10px" class="score-awarded">0</div>
 				</div>
 				<div onclick="Grail.open('048A3A56B014940E73F89C2F98DB2C06')" class="diary-item part-solved">
 					<h3 class="diary-item-title">126</h3>

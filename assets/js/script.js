@@ -1,6 +1,10 @@
 class GrailHandler {
 	logout() {
-		alert('Error Logging Out');
+		window.location.href = "/auth/logout";
+	}
+
+	login() {
+		window.location.href = "/auth/login";
 	}
 
 	open($page) {

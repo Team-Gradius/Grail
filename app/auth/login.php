@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Grail! - Signup</title>
+		<title>Grail! - Login</title>
 		<?php include($_SERVER['DOCUMENT_ROOT'].'/blades/head.blade.html'); ?>
 	</head>
 	<body>
@@ -11,15 +11,14 @@
 		</div>	
 
 		<br>
-		<h1 class="clue-title">Congratulations!</h1>
-		<p class="standard-text">You've completed the first two puzzles, it's time to get your name on the scoreboard!</p>	
+		<h1 class="clue-title">Login</h1>
+		<p class="standard-text">The first two puzzles must be completed before account creation!</p>	
 
 		<input autocomplete="off" id="email" type="email" class="detail-input" placeholder="Email"><br><br>
-		<input autocomplete="off" id="username" style="text-transform: uppercase;" type="text" class="detail-input" placeholder="Username"><br><br>
 		<input autocomplete="off" id="password" type="password" class="detail-input" placeholder="Password">
 
 		<div class="submit-button disabled-state">Enter</div>
-		<h1 class="submit-failed">Username taken</h1>
+		<h1 class="submit-failed">Login failed!</h1>
 
 		</div>
 
@@ -37,7 +36,7 @@
 
 		$('input').on('input', function() {
 			$('.submit-failed').hide();
-			if (isEmail($.trim($('#email').val())) && $.trim($('#username').val()).length > 0 && $.trim($('#password').val()).length > 0) {
+			if (isEmail($.trim($('#email').val())) && $.trim($('#password').val()).length > 0) {
 				$('.submit-button').removeClass('disabled-state');
 			} else {
 				$('.submit-button').addClass('disabled-state');
@@ -49,13 +48,13 @@
 				$('.submit-button').text('Loading');
 				$('.submit-button').addClass('loading-state');
 					$.ajax({
-						url: '/auth/data/create_user',
+						url: '/auth/data/login',
 						type: 'POST',
-						data: {'email': $.trim($('#email').val()), 'username': $.trim($('#username').val()), 'password': $.trim($('#password').val())},
+						data: {'email': $.trim($('#email').val()), 'password': $.trim($('#password').val())},
 						success: function(result) {
 							var data = $.parseJSON(result);
 							if (data.response == 'true') {
-								$('.submit-button').text('Welcome!');
+								$('.submit-button').text('Done!');
 								setTimeout(function() {
 									window.location.href = data.url;
 								}, 500);

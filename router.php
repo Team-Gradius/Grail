@@ -12,7 +12,7 @@
 		if ($url_base == '')  {
 			page('landing');
 		} else if ($url_base == '/diary')  {
-			authRequired('diary');
+			authRequired('page', 'diary');
 		} else if ($url_base == '/048A3A56B014940E73F89C2F98DB2C06')  {
 			page('first_clue');
 		} else if ($url_base == '/clue/level-one')  {
@@ -33,8 +33,10 @@
 			app('auth/php/create_user');
 		} else if ($url_base == '/auth/login')  {
 			app('auth/login');
+		} else if ($url_base == '/auth/data/login')  {
+			app('auth/php/login_user');
 		} else if ($url_base == '/auth/logout')  {
-			app('auth/php/logout.php');
+			app('auth/php/logout_user');
 		} else {
 			page('error');
 		}
