@@ -14,8 +14,8 @@
 		<p class="clue-text-smaller">
 			All roads lead to glory,
 			<br>to one of quizzes, three.
-			<br>Upon the top your name might show
-			<br>if clever, you can be.
+			<br>To find the Grail <span style="vertical-align: middle; font-size: 8px">(that isn’t Blue)</span>
+			<br>quite clever, you must be.
 			<br><br>
 			<br>The first will test your luck,
 			<br>from crying you’ll refrain.
@@ -41,6 +41,7 @@
 		<input type="text" class="standard-input" placeholder="Answer">
 
 		<div class="submit-button disabled-state">Enter</div>
+		<div class="success-text"></div>
 
 		</div><br><br>
 
@@ -48,6 +49,7 @@
 	<?php include($_SERVER['DOCUMENT_ROOT'].'/blades/scripts.blade.html'); ?>
 	<script type="text/javascript">
 	$('input').on('input', function() {
+			$('.success-text').hide();
 			if ($.trim($(this).val().length) > 0)
 				$('.submit-button').removeClass('disabled-state');
 			else
@@ -63,19 +65,20 @@
 					type: 'POST',
 					data: {'answer': $.trim($('input').val())},
 					success: function(result) {
-						console.log(result);
 						var data = $.parseJSON(result);
 						if (data.response == 'true') {
 							$('.submit-button').text('Correct!');
-							// 
+							$('.success-text').text(data.text);
+							$('.success-text').show();
 						} else {
+							$('.success-text').text('');
+							$('.success-text').hide();
 							$('.submit-button').text('Wrong!');
-							$('input').val('');
 							setTimeout(function() {
 								$('.submit-button').text('Enter');
 								$('.submit-button').addClass('disabled-state');
 								$('.submit-button').removeClass('loading-state');
-							}, 300);
+							}, 500);
 						}
 					}
 				});
