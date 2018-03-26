@@ -10,7 +10,7 @@
 
 		// Frontend Pages
 		if ($url_base == '')  {
-			page('landing');
+			page('scoreboard');
 		} else if ($url_base == '/diary')  {
 			authRequired('page', 'diary');
 		} else if ($url_base == '/048A3A56B014940E73F89C2F98DB2C06')  {

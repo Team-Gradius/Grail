@@ -56,11 +56,11 @@
 					<td>'.number_format($info['totalScore']).'</td>
 					<td class="sb-name">
 						<span class="sb-name-value">'.$info['username'].'</span>
-						<div class="score-icons">
-							<img draggable="false" class="level-icon" src="/assets/img/lvlOne.png">
-							<img draggable="false" class="level-icon" src="/assets/img/lvlTwo.png">
-							<img draggable="false" class="level-icon" src="/assets/img/lvlThree.png">
-						</div>
+						<div class="score-icons">';
+						getScoreboardIcon('level_one', 'lvlOne', $info['username']);
+						getScoreboardIcon('level_two', 'lvlTwo', $info['username']);
+						getScoreboardIcon('level_three', 'lvlThree', $info['username']);
+					echo '</div>
 					</td>
 					</tr>';
 					$i++;

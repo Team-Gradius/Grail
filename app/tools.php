@@ -84,6 +84,15 @@
 		}
 	}
 
+	function getScoreboardIcon($name, $location, $username) {
+		$mysqli = mysqli_connect("localhost","root","root","grail");
+		$data = $mysqli->query("SELECT $name FROM `players` WHERE `username` = '$username'");
+		$check = $data->fetch_object()->$name;   
+		if ($check == 'true') {
+			echo '<img draggable="false" class="level-icon" src="/assets/img/'.$location.'.png">';
+		}
+	}
+
 	function getPuzzleLock($item) {
 		$mysqli = mysqli_connect("localhost","root","root","grail");
 		$username = $mysqli->real_escape_string($_COOKIE['_aun']);
