@@ -40,10 +40,46 @@
 
 		<input type="text" class="standard-input" placeholder="Answer">
 
-		<div class="submit-button">Enter</div>
+		<div class="submit-button disabled-state">Enter</div>
 
 		</div><br><br>
 
 	</body>
 	<?php include($_SERVER['DOCUMENT_ROOT'].'/blades/scripts.blade.html'); ?>
+	<script type="text/javascript">
+	$('input').on('input', function() {
+			if ($.trim($(this).val().length) > 0)
+				$('.submit-button').removeClass('disabled-state');
+			else
+				$('.submit-button').addClass('disabled-state');
+		});
+
+		$('.submit-button').on('click', function() {
+			if (!$(this).hasClass('disabled-state')) {
+				$('.submit-button').text('Checking');
+				$('.submit-button').addClass('loading-state');
+				$.ajax({
+					url: '/data/8c154af9ac2bf94569cb67a89d09b05e',
+					type: 'POST',
+					data: {'answer': $.trim($('input').val())},
+					success: function(result) {
+						console.log(result);
+						var data = $.parseJSON(result);
+						if (data.response == 'true') {
+							$('.submit-button').text('Correct!');
+							// 
+						} else {
+							$('.submit-button').text('Wrong!');
+							$('input').val('');
+							setTimeout(function() {
+								$('.submit-button').text('Enter');
+								$('.submit-button').addClass('disabled-state');
+								$('.submit-button').removeClass('loading-state');
+							}, 300);
+						}
+					}
+				});
+			}
+		});
+	</script>
 </html>

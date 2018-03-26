@@ -15,7 +15,7 @@
 		<p class="standard-text">You've completed the first two puzzles, it's time to get your name on the scoreboard!</p>	
 
 		<input autocomplete="off" id="email" type="email" class="detail-input" placeholder="Email"><br><br>
-		<input autocomplete="off" id="username" style="text-transform: uppercase;" type="text" class="detail-input" placeholder="Username"><br><br>
+		<input maxlength="10" autocomplete="off" id="username" style="text-transform: uppercase;" type="text" class="detail-input" placeholder="Username"><br><br>
 		<input autocomplete="off" id="password" type="password" class="detail-input" placeholder="Password">
 
 		<div class="submit-button disabled-state">Enter</div>
@@ -59,7 +59,9 @@
 								setTimeout(function() {
 									window.location.href = data.url;
 								}, 500);
-							} else {
+							} else if (daata.response == 'long') {
+								alert('Maximum name length of 10 characters!');
+							}else {
 								$('.submit-failed').show();
 								$('.submit-button').text('Enter');
 								$('.submit-button').removeClass('loading-state');

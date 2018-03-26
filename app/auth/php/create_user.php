@@ -8,29 +8,47 @@
 		$email = $_POST['email'];
 		$username = $_POST['username'];
 		$password = $_POST['password'];
-		$username_check = $mysqli->real_escape_string($username);
 
-		$salt = substr(uniqid(rand(), true), 16, 16);
-		$hash = crypt($password, $salt);
+		if (strlen($username) <= 10) {
 
-		$data = $mysqli->query("SELECT `username` FROM `players` WHERE `username` = '$username_check'");
+			$username_check = $mysqli->real_escape_string($username);
 
-		if ($data->num_rows > 0)
-			$status = true;
+			$salt = substr(uniqid(rand(), true), 16, 16);
+			$hash = crypt($password, $salt);
 
-		if ($status == false) {
-			setcookie("_aun", $username, 2147483647, '/');
-			setcookie("_apw", $hash, 2147483647, '/');
-			setcookie("_uaa", false, -1, '/');
+			$data = $mysqli->query("SELECT `username` FROM `players` WHERE `username` = '$username_check'");
 
-			$query = "INSERT INTO players (username, email, passwordHash, passwordSalt)  VALUES (?, ?, ?, ?)";
-			$stmt = $mysqli->prepare($query);
-			$stmt->bind_param("sssss", $username, $email, $hash, $salt, $date);
-			$stmt->execute();
+			if ($data->num_rows > 0)
+				$status = true;
 
-			echo json_encode(array('response' => 'true', 'url' => '/diary'));
+			if ($status == false) {
+				setcookie("_aun", $username, 2147483647, '/');
+				setcookie("_apw", $hash, 2147483647, '/');
+				setcookie("_uaa", false, -1, '/');
+
+				$points = $mysqli->query("SELECT * FROM `points` WHERE `point_name` = 'first_puzzle'");
+				$point_data = $points->fetch_object();
+				$points_awarded = $point_data->points_awarded;
+				$minimum_points = $point_data->minimum_points;
+				if ($points_awarded != $minimum_points) {
+					$new_award = $points_awarded - 10;
+				} else {
+					$new_award = $minimum_points;
+				}
+
+				$mysqli->query("UPDATE `points` SET `points_awarded`= '$new_award' WHERE `point_name` = 'first_puzzle'");
+				$query = "INSERT INTO players (username, email, passwordHash, passwordSalt, totalScore, first_puzzle)  VALUES (?, ?, ?, ?, ?, ?)";
+				$stmt = $mysqli->prepare($query);
+				$stmt->bind_param("ssssss", $username, $email, $hash, $salt, $points_awarded, $points_awarded);
+				$stmt->execute();
+
+				echo json_encode(array('response' => 'true', 'url' => '/diary'));
+			} else {
+				echo json_encode(array('response' => 'false'));
+			}
+
 		} else {
-			echo json_encode(array('response' => 'false'));
+			echo json_encode(array('response' => 'long'));
 		}
 
 	} else {
