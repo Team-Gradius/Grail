@@ -1,0 +1,44 @@
+[
+    {
+    	"title": "Monty Python and The Holy Grail",
+    	"year": 1975,
+    	"quotes": [
+            {
+    			"spoken_by": "Bridgekeeper",
+    			"line": "What... is your quest?",
+    			"character": "Sir Lancelot",
+    			"answer": "to seek the holy grail"
+            },
+            {
+    			"spoken_by": "Black Knight",
+    			"line": " 'Tis but a scratch!",
+    			"character": "King Arthur",
+    			"answer": "a scratch? your arms off"
+            }
+    	]
+    },
+    {
+    	"title": "Blade Runner",
+    	"year": 1982,
+    	"quotes": [
+            {
+    			"spoken_by": "Holden",
+    			"line": "You're in a desert, walking along in the sand, when all of a sudden you look down...",
+    			"character": "Leon",
+    			"answer": "what one?"
+            }
+        ]
+    },
+    {
+        "title": "The Matrix",
+        "year": 2001,
+        "quotes": [
+            {
+                "spoken_by": "Test",
+                "line": " What's your name?",
+                "character": "Testboi",
+                "answer": "Robbie"
+            }
+        ]
+    }
+]

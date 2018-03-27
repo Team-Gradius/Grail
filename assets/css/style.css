@@ -29,6 +29,73 @@ body {
 	font-family: 'Press Start 2P';
 }
 
+.ms-wrapper {
+	width: 80%;
+	max-width: 600px;
+	user-select: none;
+	margin: 30px auto;
+	text-align: left;
+}
+
+.ms-line {
+	text-align: left;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.ms-line > span {
+	color: red;
+}
+
+.ms-answer {
+	text-align: left;
+	font-size: 18px;
+	line-height: 20px;
+	color: red;
+}
+
+.ms-count {
+	color: #2196f3;
+	margin-top: 70px;
+	font-size: 12px;
+}
+
+.ms-timer {
+	color: #2196f3;
+	margin-top: 10px;
+	font-size: 30px;
+}
+
+.left-input {
+	height: 45px;
+	width: 100%;
+	background-color: white;
+	font-size: 19px;
+	border: none;
+	box-shadow: 3px 3px 0px lightgrey;
+	-webkit-appearance: none;
+	outline: none;
+	text-transform: uppercase;
+	text-align: center;
+	font-family: 'Press Start 2P';
+}
+
+.left-input::placeholder {
+	color: lightgrey;
+}
+
+.ms-title {
+	text-align: center;
+	font-size: 23px;
+	line-height: 35px;
+}
+
+.ms-title > span {
+	color: gold;
+	margin-left: -10px;
+	font-size: 20px;
+}
+
 .popup-wrapper {
 	height: 100%;
 	width: 100%;
