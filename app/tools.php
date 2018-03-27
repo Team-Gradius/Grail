@@ -34,6 +34,40 @@
 		}
 	}
 
+	function getPuzzleUnlockStatus($item) {
+		$mysqli = mysqli_connect("localhost","root","root","grail");
+		$username = $mysqli->real_escape_string($_COOKIE['_aun']);
+		$data = $mysqli->query("SELECT $item FROM `players` WHERE `username` = '$username'");
+		$check = $data->fetch_object()->$item; 
+		if ($check >= 1) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	function authAndUnlockRequired($type, $field, $location) {
+		if (authSuccess()) {
+			if (getPuzzleUnlockStatus($field)) {
+				switch ($type) {
+					case 'page':
+						page($location);
+						break;
+					case 'app':
+						app($location);
+						break;
+					case 'code':
+						code($location);
+						break;
+				}
+			} else {
+				header('Location: /');
+			}
+		} else {
+			header('Location: /');
+		}
+	}
+
 	function addSuffix($num) {
 	    if (!in_array(($num % 100),array(11,12,13))){
 	      switch ($num % 10) {
@@ -88,6 +122,16 @@
 			echo 'part-disabled';
 		} else if ($check > 1) {
 			echo 'part-solved';
+		}
+	}
+
+	function getPartPage($item, $location) {
+		$mysqli = mysqli_connect("localhost","root","root","grail");
+		$username = $mysqli->real_escape_string($_COOKIE['_aun']);
+		$data = $mysqli->query("SELECT $item FROM `players` WHERE `username` = '$username'");
+		$check = $data->fetch_object()->$item;  
+		if ($check >= 1) {
+			echo 'onclick="Grail.open(\''.$location.'\')"';
 		}
 	}
 

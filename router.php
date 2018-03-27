@@ -8,23 +8,28 @@
 	function code($name) { include('assets/php/'.$name.'.php'); }
 	app('tools');
 
-		// Frontend Pages
+	// Frontend Pages
+		// Core Pages
 		if ($url_base == '')  {
 			page('scoreboard');
 		} else if ($url_base == '/diary')  {
 			authRequired('page', 'diary');
 		} else if ($url_base == '/048A3A56B014940E73F89C2F98DB2C06')  {
 			page('first_clue');
-		} else if ($url_base == '/clue/level-one')  {
-			page('level_one/clue');
 
-		// Backend Pages
+		// Level One
+		} else if ($url_base == '/clue/level-one')  {
+			authRequired('page', 'level_one/clue');
+		} else if ($url_base == '/level_one/part_one')  {
+			authAndUnlockRequired('page', 'one_part_one', 'level_one/part_one');
+
+	// Backend Pages
 		} else if ($url_base == '/data/15ec430e978d726133be311b5d3b1097')  {
 			code('first_clue');
 		} else if ($url_base == '/data/8c154af9ac2bf94569cb67a89d09b05e')  {
 			code('level_one/level_one_clue');
 
-		// Other
+	// Other
 		} else if ($url_base == '/auth/create')  {
 			if (isset($_COOKIE['_uaa']) && $_COOKIE['_uaa'] == true) {
 				app('auth/create');
