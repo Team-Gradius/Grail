@@ -63,7 +63,7 @@
 		<div class="submit-button disabled-state">Enter</div>
 		<div class="success-text"></div>
 
-		</div><br><br>
+		<br><br>
 
 	</body>
 	<?php include($_SERVER['DOCUMENT_ROOT'].'/blades/scripts.blade.html'); ?>

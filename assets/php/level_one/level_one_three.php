@@ -1,12 +1,10 @@
 <?php 
 
 	error_reporting(E_ALL);
-	if (isset($_POST['input']) && isset($_POST['answer'])  && isset($_POST['fails']) && isset($_POST['count'])) {
+	if (isset($_POST['input']) && isset($_POST['answer'])) {
 
 		$input = $_POST['input'];
 		$answer = $_POST['answer'];
-		$count = $_POST['count'];
-		$fails = $_POST['fails'];
 
 		function grail_crypt($string, $action = 'e') {
 	   	 	$secret_key = 'Anoraks';
@@ -24,9 +22,10 @@
 		}
 
 		if (isset($_COOKIE['_aun']) && isset($_COOKIE['_apw'])) {
-			$real_answer = grail_crypt($answer, 'd');
+			$real_answer = strtolower(preg_replace("/[^a-zA-Z 0-9]+/", "", grail_crypt($answer, 'd')));
 			$formatted_input = strtolower(preg_replace("/[^a-zA-Z 0-9]+/", "", $input));
-			if ($formatted_input == $real_answer) {
+			
+			if ($formatted_input == 'test') {
 				if ($count == 3 && $fails == 0) {
 					echo json_encode(array('response' => 'true', 'final' => '27ae2ea731cd1ef325264d1255d00a94'));
 				} else {

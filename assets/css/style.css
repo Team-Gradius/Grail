@@ -349,6 +349,25 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 
+.long-input {
+	height: 45px;
+	width: 80%;
+	max-width: 450px;
+	background-color: white;
+	font-size: 15px;
+	border: none;
+	box-shadow: 3px 3px 0px lightgrey;
+	-webkit-appearance: none;
+	outline: none;
+	text-transform: uppercase;
+	text-align: center;
+	font-family: 'Press Start 2P';
+}
+
+.long-input::placeholder {
+	color: lightgrey;
+}
+
 .standard-input {
 	height: 45px;
 	width: 280px;
@@ -464,6 +483,18 @@ input::-webkit-inner-spin-button {
 	margin: 30px auto 30px auto;
 	padding: 0px 20px 0px 20px;
 	max-width: 400px;
+}
+
+.clue-text-center {
+	text-align: center;
+	line-height: 30px;
+	user-select: none;
+	text-transform: uppercase;
+	width: 80%;
+	max-width: 600px;
+	margin: 20px auto;
+	margin-top: 30px;
+	margin-bottom: 50px;
 }
 
 .clue-text {

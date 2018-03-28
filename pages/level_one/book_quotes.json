@@ -1,0 +1,65 @@
+[
+	{
+		"genre": "Sci-Fi",
+		"books": [
+			{
+				"title": "Snow Crash",
+				"quote": "A misspelled hero protagonist"
+			},
+			{
+				"title": "The Hitchhiker's Guide to the Galaxy",
+				"quote": "The beginnings of an increasingly illogical trilogy"
+			},
+			{
+				"title": "Ender's Game",
+				"quote": "A boy too naive to save the world, his game might be the only thing that can."
+			},
+			{
+				"title": "Dune",
+				"quote": "In a sprawling intergalactic empire, everyone will fight to control this world"
+			}
+		]
+	},
+	{
+		"genre": "Fantasy",
+		"books": [			
+			{
+				"title": "Willow",
+				"quote": "A depressed robot, before that lead this celluloid-to-paper-story."
+			},
+			{
+				"title": "Harry Potter and the Philosopher's Stone",
+				"quote": "It’s not a Sorcerer’s Stone."
+			},
+			{
+				"title": "The Lightning Thief",
+				"quote": "A thunderous start for a half-god"
+			},
+			{
+				"title": "The Magicians",
+				"quote": "A show and a book, both are magic"
+			}
+		]
+	},
+	{
+		"genre": "Horror",
+		"books": [						
+			{
+				"title": "Interview with the Vampire",
+				"quote": "A story of gothic horror, start the chronicles and drink."
+			},
+			{
+				"title": "The Shining",
+				"quote": "It takes a Jack to make a Jack famous."
+			},
+			{
+				"title": "Pride and Prejudice and Zombies",
+				"quote": "A classic romance, now it’s turned deadly."
+			},
+			{
+				"title": "American Psycho",
+				"quote": "If greed isn't good enough, settle for mutilation"
+			}
+		]
+	}
+]

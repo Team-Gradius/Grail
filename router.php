@@ -24,6 +24,8 @@
 			authAndUnlockRequired('page', 'one_part_one', 'level_one/part_one');
 		} else if ($url_base == '/level_one/part_two')  {
 			authAndUnlockRequired('page', 'one_part_two', 'level_one/part_two');
+		} else if ($url_base == '/level_one/part_three')  {
+			authAndUnlockRequired('page', 'one_part_three', 'level_one/part_three');
 
 	// Backend Pages
 		} else if ($url_base == '/data/15ec430e978d726133be311b5d3b1097')  {
@@ -36,6 +38,8 @@
 			code('level_one/level_one_one');
 		} else if ($url_base == '/data/d3d84d54a99c8cac66e9e06fca546304')  {
 			code('level_one/level_one_two');
+		} else if ($url_base == '/data/ae50750d2fcdbf4e7d8fbc6e31281f3c')  {
+			code('level_one/level_one_three');
 
 	// Other
 		} else if ($url_base == '/auth/create')  {

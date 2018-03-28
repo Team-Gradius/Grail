@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Grail! - Level 1.2</title>
+		<title>Grail! - Level 1.3</title>
 		<?php include($_SERVER['DOCUMENT_ROOT'].'/blades/head.blade.html'); ?>
 	</head>
 	<body>
@@ -10,15 +10,54 @@
 			<img class="sb-diary-icon" src="/assets/img/diary.png">
 		</div>	
 
-		 <div class="haiku-count">1 out of 3</div>
+		<div class="haiku-count">1 out of 3</div>
+		<br>
 
-		<p id="234902384" class="clue-text">
-			In an open field 
-			<br>outdoors. Still much left to do.
-			<br>Time to count the leaves.
-		</p>
+		<?php 
 
-		<input type="text" class="standard-input" placeholder="Answer">
+		$json = json_decode(file_get_contents('pages/level_one/book_quotes.json'));
+		$first_visible = true;
+
+		function grail_crypt($string, $action = 'e') {
+	   	 	$secret_key = 'Anoraks';
+	    	$secret_iv = 'Basement';
+	    	$output = false;
+		    $encrypt_method = "AES-256-CBC";
+		    $key = hash( 'sha256', $secret_key );
+		    $iv = substr( hash( 'sha256', $secret_iv ), 0, 16 );
+		    if ($action == 'e') {
+		        $output = base64_encode( openssl_encrypt( $string, $encrypt_method, $key, 0, $iv ) );
+		    } else if ($action == 'd') {
+		        $output = openssl_decrypt( base64_decode( $string ), $encrypt_method, $key, 0, $iv );
+		    }
+	    	return $output;
+		}
+
+		for ($i = 1; $i <= 3; $i++) {
+		  $book_key = array_rand($json, 1);
+		  $quote = $json[$book_key]->books;
+		  $quote = $quote[array_rand($quote)];
+
+
+			echo '<div ';
+
+			if ($first_visible == true)
+				$first_visible = false;
+			else
+				echo 'style="display: none;"';
+
+			echo ' data-answer="'.grail_crypt($quote->title, 'e').'" class="book-active book-wrapper">
+				<h1 class="diary-title">'.$json[$book_key]->genre.'</h1><br>
+				<p class="clue-text-center">"'.$quote->quote.'"</p>
+			</div>';
+
+		  unset($json[$book_key]);
+
+		}
+
+		 ?>
+
+		<input type="text" class="long-input" placeholder="Title">
 		<div class="submit-button disabled-state">Enter</div>
 		<div class="success-text"></div>
 
@@ -41,9 +80,9 @@
 				$('.submit-button').text('Checking');
 				$('.submit-button').addClass('loading-state');
 				$.ajax({
-					url: '/data/d3d84d54a99c8cac66e9e06fca546304',
+					url: '/data/ae50750d2fcdbf4e7d8fbc6e31281f3c',
 					type: 'POST',
-					data: {'id': $('.clue-text').attr('id'), 'answer': $.trim($('input').val())},
+					data: {'input': $.trim($('.book-active input').val()), 'answer': $('.book-active').attr('data-answer')},
 					success: function(result) {
 						var data = $.parseJSON(result);
 						if (data.response == 'true') {
