@@ -59,6 +59,13 @@ body {
 	color: red;
 }
 
+.haiku-count {
+	color: #2196f3;
+	margin-top: 70px;
+	margin-bottom: -50px;
+	font-size: 12px;
+}
+
 .ms-count {
 	color: #2196f3;
 	margin-top: 70px;

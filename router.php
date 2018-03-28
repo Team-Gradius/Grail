@@ -22,6 +22,8 @@
 			authRequired('page', 'level_one/clue');
 		} else if ($url_base == '/level_one/part_one')  {
 			authAndUnlockRequired('page', 'one_part_one', 'level_one/part_one');
+		} else if ($url_base == '/level_one/part_two')  {
+			authAndUnlockRequired('page', 'one_part_two', 'level_one/part_two');
 
 	// Backend Pages
 		} else if ($url_base == '/data/15ec430e978d726133be311b5d3b1097')  {
@@ -32,6 +34,8 @@
 			code('level_one/level_one_clue');
 		} else if ($url_base == '/data/8acae5da49283f7f59a919dc87b74453')  {
 			code('level_one/level_one_one');
+		} else if ($url_base == '/data/d3d84d54a99c8cac66e9e06fca546304')  {
+			code('level_one/level_one_two');
 
 	// Other
 		} else if ($url_base == '/auth/create')  {
