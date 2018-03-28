@@ -57,9 +57,8 @@
 				$new_award = $minimum_points;
 			}
 
-			$mysqli->query("UPDATE `points` SET `points_awarded`= '$new_award' WHERE `point_name` = 'one_part_one'");
-
 			if (getPartStatus('one_part_one') == 1) {
+				$mysqli->query("UPDATE `points` SET `points_awarded`= '$new_award' WHERE `point_name` = 'one_part_one'");
 				$mysqli->query("UPDATE `players` SET `one_part_one` = '$points_awarded' WHERE `username` = '$username'");
 				updateTotalScore();
 				echo json_encode(array('response' => 'true', 'text' => 'Part 1 Complete'));	
