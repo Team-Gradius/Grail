@@ -1,44 +1,398 @@
 [
-    {
-    	"title": "Monty Python and The Holy Grail",
-    	"year": 1975,
-    	"quotes": [
-            {
-    			"spoken_by": "Bridgekeeper",
-    			"line": "What... is your quest?",
-    			"character": "Sir Lancelot",
-    			"answer": "to seek the holy grail"
-            },
-            {
-    			"spoken_by": "Black Knight",
-    			"line": " 'Tis but a scratch!",
-    			"character": "King Arthur",
-    			"answer": "a scratch? your arms off"
-            }
-    	]
-    },
-    {
-    	"title": "Blade Runner",
-    	"year": 1982,
-    	"quotes": [
-            {
-    			"spoken_by": "Holden",
-    			"line": "You're in a desert, walking along in the sand, when all of a sudden you look down...",
-    			"character": "Leon",
-    			"answer": "what one?"
-            }
-        ]
-    },
-    {
-        "title": "The Matrix",
-        "year": 2001,
-        "quotes": [
-            {
-                "spoken_by": "Test",
-                "line": " What's your name?",
-                "character": "Testboi",
-                "answer": "Robbie"
-            }
-        ]
-    }
+   {
+      "title":"Monty Python and The Holy Grail",
+      "year":1975,
+      "quotes":[
+         {
+            "spoken_by":"Bridgekeeper",
+            "line":"What... is your quest?",
+            "character":"Sir Lancelot",
+            "answer":"to seek the holy grail"
+         },
+         {
+            "spoken_by":"Black Kinght",
+            "line":"'Tis but a scratch!",
+            "character":"King Arthur",
+            "answer":"a scratch your arms off"
+         },
+         {
+            "spoken_by":"Sir Bedevere",
+            "line":"What makes you think she's a witch?",
+            "character":"Peasant 3",
+            "answer":"well she turned me into a newt"
+         },
+         {
+            "spoken_by":"Sir Bedevere",
+            "line":"Tell me. What do you do with witches?",
+            "character":"Peasant 1",
+            "answer":"burn them"
+         },
+         {
+            "spoken_by":"King Arthur",
+            "line":"Right. One…two…five!",
+            "character":"Sir Galahad",
+            "answer":"three sir"
+         },
+         {
+            "spoken_by":"Bridgekeeper",
+            "line":"What is the air speed velocity of an unladen swallow?",
+            "character":"King Arthur",
+            "answer":"what do you mean an african or european swallow"
+         },
+         {
+            "spoken_by":"King Arthur",
+            "line":"I am your King",
+            "character":"Woman",
+            "answer":"well i didnt vote for you"
+         },
+         {
+            "spoken_by":"Sir Galahad",
+            "line":"Look, let me go back in there and face the peril.",
+            "character":"Sir Lancelot",
+            "answer":"no its too perilous"
+         }
+      ]
+   },
+   {
+      "title":"Blade Runner",
+      "year":1982,
+      "quotes":[
+         {
+            "spoken_by":"Holden",
+            "line":"You're in a desert, walking along in the sand, when all of a sudden you look down...",
+            "character":"Leon",
+            "answer":"what one"
+         },
+         {
+            "spoken_by":"Rachel",
+            "line":"Do you like our Owl?",
+            "character":"Deckard",
+            "answer":"its artificial"
+         },
+         {
+            "spoken_by":"Leon",
+            "line":"I've never seen a turtle... But I understand what you mean.",
+            "character":"Holden",
+            "answer":"you reach down and you flip the tortoise over on its back Leon"
+         },
+         {
+            "spoken_by":"Deckard",
+            "line":"She's a Replicant, isn't she?",
+            "character":"Tyrell",
+            "answer":"im impressed how many questions does it usually take to spot one"
+         },
+         {
+            "spoken_by":"Leon",
+            "line":"My birthday is April 10, 2017. How long do I live?",
+            "character":"Deckard",
+            "answer":"four years"
+         },
+         {
+            "spoken_by":"Tyrell",
+            "line":"I'm surprised you didn't come here sooner.",
+            "character":"Batty",
+            "answer":"its not an easy thing to meet your maker"
+         },
+         {
+            "spoken_by":"Tyrell",
+            "line":"Would you like to be upgraded?",
+            "character":"Batty",
+            "answer":"stay here had in mind something a little more radical"
+         },
+         {
+            "spoken_by":"Sushi Master",
+            "line":"He say you Blade Runner",
+            "character":"Deckard",
+            "answer":"tell him im eating"
+         },
+         {
+            "spoken_by":"Roy",
+            "line":"There's only two of us now",
+            "character":"Pris",
+            "answer":"then were stupid and well die"
+         }
+      ]
+   },
+   {
+      "title":"The Matrix",
+      "year":1999,
+      "quotes":[
+         {
+            "spoken_by":"Neo",
+            "line":"Why do my eyes hurt?",
+            "character":"Morpheus",
+            "answer":"youve never used them before"
+         },
+         {
+            "spoken_by":"Oracle",
+            "line":"I'd ask you to sit down, but, you're not going to anyway. And don't worry about the vase.",
+            "character":"Neo",
+            "answer":"what vase"
+         },
+         {
+            "spoken_by":"Neo",
+            "line":"If you're killed in The Matrix, you die here?",
+            "character":"Morpheus",
+            "answer":"the body cannot live without the mind"
+         },
+         {
+            "spoken_by":"Tank",
+            "line":"So what do you need? Besides a miracle.",
+            "character":"Neo",
+            "answer":"Guns lots of guns"
+         },
+         {
+            "spoken_by":"Agent Smith",
+            "line":"You hear that Mr. Anderson? That is the sound of inevitability. It is the sound of your death. Goodbye, Mr. Anderson.",
+            "character":"Neo",
+            "answer":"my name is neo"
+         },
+         {
+            "spoken_by":"Neo",
+            "line":"I know Kung-fu",
+            "character":"Morpheus",
+            "answer":"show me"
+         },
+         {
+            "spoken_by":"Agent Smith",
+            "line":"You're empty.",
+            "character":"Neo",
+            "answer":"so are you"
+         },
+         {
+            "spoken_by":"lieutenant",
+            "line":"I think we can handle one little girl. I sent two units, they're bringing her down now.",
+            "character":"Agent Smith",
+            "answer":"no lieutenant your men are already dead"
+         }
+      ]
+   },
+   {
+      "title":"Rocky",
+      "year":1976,
+      "quotes":[
+         {
+            "spoken_by":"Adrian",
+            "line":"Why do you wanna fight?",
+            "character":"Rocky",
+            "answer":"because i cant sing or dance"
+         },
+         {
+            "spoken_by":"Rocky",
+            "line":"It's a living",
+            "character":"Mickey",
+            "answer":"its a waste of life"
+         }
+      ]
+   },
+   {
+      "title":"WarGames",
+      "year":1983,
+      "quotes":[
+         {
+            "spoken_by":"Jennifer",
+            "line":"What is it doing?",
+            "character":"David",
+            "answer":"its learning"
+         },
+         {
+            "spoken_by":"David",
+            "line":"Is this a game, or is it real?",
+            "character":"Joshua",
+            "answer":"whats the difference"
+         },
+         {
+            "spoken_by":"David",
+            "line":"is there any way to make it play itself?",
+            "character":"Falken",
+            "answer":"yes number of players zero"
+         },
+         {
+            "spoken_by":"Falken",
+            "line":"Are either of you palaeontologists? I'm in desperate need of a palaeontologist.",
+            "character":"Jennifer",
+            "answer":"no were high school students"
+         },
+         {
+            "spoken_by":"Joshua",
+            "line":"Which side do you want?",
+            "character":"David",
+            "answer":"ill be the russians"
+         }
+      ]
+   },
+   {
+      "title":"Aladdin",
+      "year":1992,
+      "quotes":[
+         {
+            "spoken_by":"Aladdin",
+            "line":"Sadly, yes. She is my sister. She's a little crazy.",
+            "character":"Farouk",
+            "answer":"she said she knew the sultan"
+         },
+         {
+            "spoken_by":"Sultan",
+            "line":"Jafar, you vile betrayer!",
+            "character":"Iago",
+            "answer":"thats sultan vile betrayer to you"
+         },
+         {
+            "spoken_by":"Jasmine",
+            "line":"Father, I choose Prince Ali!",
+            "character":"Jafar",
+            "answer":"prince ali left"
+         },
+         {
+            "spoken_by":"Guard",
+            "line":"You won't get away so easy!",
+            "character":"Aladdin",
+            "answer":"you think that was easy"
+         }
+      ]
+   },
+   {
+      "title":"The Lion King",
+      "year":1994,
+      "quotes":[
+         {
+            "spoken_by":"Simba",
+            "line":"Creepy little monkey. Would you stop following me! Who are you?",
+            "character":"Rafiki",
+            "answer":"the question is who are you"
+         },
+         {
+            "spoken_by":"Simba",
+            "line":"Ow! Jeez, what was that for?",
+            "character":"Rafiki",
+            "answer":"it doesnt matter its in the past"
+         },
+         {
+            "spoken_by":"Simba",
+            "line":"Hey, Uncle Scar, guess what?",
+            "character":"Scar",
+            "answer":"i despise guessing games"
+         },
+         {
+            "spoken_by":"Timon",
+            "line":"Hyenas. I hate Hyenas. So what's the plan for getting past those guys?",
+            "character":"Simba",
+            "answer":"live bait"
+         }
+      ]
+   },
+   {
+      "title":"Clueless",
+      "year":1995,
+      "quotes":[
+         {
+            "spoken_by":"Amber",
+            "line":"Ms. Stoeger, my plastic surgeon doesn't want me doing any activity where balls fly at my nose.",
+            "character":"Dionne",
+            "answer":"well there goes your social life"
+         },
+         {
+            "spoken_by":"Tai",
+            "line":"Cher, you're a vigin?",
+            "character":"Cher",
+            "answer":"you say that like its a bad thing"
+         }
+      ]
+   },
+   {
+      "title":"Hackers",
+      "year":1995,
+      "quotes":[
+         {
+            "spoken_by":"Mrs. Murphy",
+            "line":"What did you learn in school today?",
+            "character":"Dade",
+            "answer":"revenge"
+         },
+         {
+            "spoken_by":"Dade",
+            "line":"You look good in a dress.",
+            "character":"Kate",
+            "answer":"you would have looked better"
+         },
+         {
+            "spoken_by":"Kate",
+            "line":"Are you challenging me?",
+            "character":"Dade",
+            "answer":"name your stakes"
+         }
+      ]
+   },
+   {
+      "title":"Empire Records",
+      "year":1995,
+      "quotes":[
+         {
+            "spoken_by":"Jane",
+            "line":"What are you doing later?",
+            "character":"Joe",
+            "answer":"i dont know im either going to jail or hell i cant decide which"
+         },
+         {
+            "spoken_by":"AJ",
+            "line":"listening to this crap will make you sterile",
+            "character":"Mark",
+            "answer":"maybe i want to be sterile"
+         }
+      ]
+   },
+   {
+      "title":"Guardians of the Galaxy",
+      "year":2014,
+      "quotes":[
+         {
+            "spoken_by":"Rocket Raccoon",
+            "line":"Question. What if I see something that I wanna take and it belongs to someone else?",
+            "character":"Rhomann Dey",
+            "answer":"well you will be arrested"
+         },
+         {
+            "spoken_by":"Drax",
+            "line":"Now, let's put more of this liquid into our bodies.",
+            "character":"Rocket Raccoon",
+            "answer":"thats the first thing you said that wasnt batshit crazy"
+         },
+         {
+            "spoken_by":"Drax",
+            "line":"I just saved Quill!",
+            "character":"Quill",
+            "answer":"weve already established that you destroying the ship im on is not saving me"
+         }
+      ]
+   },
+   {
+      "title":"Ghostbusters",
+      "year":1984,
+      "quotes":[
+         {
+            "spoken_by":"Venkman",
+            "line":"Oh Zuulie, you're a nut now come. I want to talk to Dana. Dana, just relax. Come on. Dana, Dana, can I talk to Dana?",
+            "character":"Zulu",
+            "answer":"there is no dana only zulu"
+         },
+         {
+            "spoken_by":"Venkman",
+            "line":"Alice, I'm going to ask you a couple of standard questions, okay? Have you or any of your family been diagnosed schizophrenic? Mentally incompetent?",
+            "character":"Alice",
+            "answer":"my uncle thought he was st jerome"
+         },
+         {
+            "spoken_by":"Walter Peck",
+            "line":"Exactly what are you a doctor of, Mr. Venkman?",
+            "character":"Venkman",
+            "answer":"well i have a phd in parapsychology and psychology"
+         },
+         {
+            "spoken_by":"Venkman",
+            "line":"You're gonna endanger us, you're gonna endanger our client. The nice lady who paid us in advance before she became a dog.",
+            "character":"Spengler",
+            "answer":"not necessarily theres definitely a very slim chance well survive"
+         }
+      ]
+   }
 ]

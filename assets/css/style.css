@@ -34,7 +34,12 @@ body {
 	max-width: 600px;
 	user-select: none;
 	margin: 30px auto;
+	display: none;
 	text-align: left;
+}
+
+.ms-active {
+	display: block;
 }
 
 .ms-line {
@@ -60,9 +65,17 @@ body {
 	font-size: 12px;
 }
 
+.ms-wrong {
+	margin-top: 10px;
+	color: #333;
+	user-select: none;
+	letter-spacing: 10px;
+}
+
 .ms-timer {
 	color: #2196f3;
 	margin-top: 10px;
+	user-select: none;
 	font-size: 30px;
 }
 
@@ -70,12 +83,11 @@ body {
 	height: 45px;
 	width: 100%;
 	background-color: white;
-	font-size: 19px;
+	font-size: 14px;
 	border: none;
 	box-shadow: 3px 3px 0px lightgrey;
 	-webkit-appearance: none;
 	outline: none;
-	text-transform: uppercase;
 	text-align: center;
 	font-family: 'Press Start 2P';
 }
@@ -718,6 +730,10 @@ input::-webkit-inner-spin-button {
 
 	.standard-text {
 		font-size: 15px;
+	}
+
+	.ms-title > span {
+		display: none;
 	}
 
 	.kc-combo {

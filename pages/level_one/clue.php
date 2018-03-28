@@ -76,7 +76,6 @@
 							$('.submit-button').text('Wrong!');
 							setTimeout(function() {
 								$('.submit-button').text('Enter');
-								$('.submit-button').addClass('disabled-state');
 								$('.submit-button').removeClass('loading-state');
 							}, 500);
 						}

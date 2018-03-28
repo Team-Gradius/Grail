@@ -26,8 +26,12 @@
 	// Backend Pages
 		} else if ($url_base == '/data/15ec430e978d726133be311b5d3b1097')  {
 			code('first_clue');
+
+		// Level One PHP
 		} else if ($url_base == '/data/8c154af9ac2bf94569cb67a89d09b05e')  {
 			code('level_one/level_one_clue');
+		} else if ($url_base == '/data/8acae5da49283f7f59a919dc87b74453')  {
+			code('level_one/level_one_one');
 
 	// Other
 		} else if ($url_base == '/auth/create')  {

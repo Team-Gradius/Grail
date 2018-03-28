@@ -79,6 +79,45 @@
 	    return $num.'th';
 	}
 
+	function updateTotalScore() {
+		$mysqli = mysqli_connect("localhost","root","root","grail");
+		$username = $mysqli->real_escape_string($_COOKIE['_aun']);
+		$data = $mysqli->query("SELECT * FROM `players` WHERE `username` = '$username'");
+		$info = $data->fetch_object();  
+		$first_puzzle = $info->first_puzzle;
+		$one_part_one = $info->one_part_one;
+		$one_part_two = $info->one_part_two;
+		$one_part_three = $info->one_part_three;
+		$one_bonus = $info->one_bonus;
+		$two_part_one = $info->two_part_one;
+		$two_part_two = $info->two_part_two;
+		$two_part_three = $info->two_part_three;
+		$two_bonus = $info->two_bonus;
+		$three_part_one = $info->three_part_one;
+		$three_part_two = $info->three_part_two;
+		$three_part_three = $info->three_part_three;
+		$three_bonus = $info->three_bonus;
+		$final_puzzle = $info->final_puzzle;
+		
+		$newTotalScore = 0;
+		if ($first_puzzle > 1) {$newTotalScore = $newTotalScore + $first_puzzle;}
+		if ($one_part_one > 1) {$newTotalScore = $newTotalScore + $one_part_one;}
+		if ($one_part_two > 1) {$newTotalScore = $newTotalScore + $one_part_two;}
+		if ($one_part_three > 1) {$newTotalScore = $newTotalScore + $one_part_three;}
+		if ($one_bonus > 1) {$newTotalScore = $newTotalScore + $one_bonus;}
+		if ($two_part_one > 1) {$newTotalScore = $newTotalScore + $two_part_one;}
+		if ($two_part_two > 1) {$newTotalScore = $newTotalScore + $two_part_two;}
+		if ($two_part_three > 1) {$newTotalScore = $newTotalScore + $two_part_three;}
+		if ($two_part_three > 1) {$newTotalScore = $newTotalScore + $two_part_three;}
+		if ($three_part_one > 1) {$newTotalScore = $newTotalScore + $three_part_one;}
+		if ($three_part_two > 1) {$newTotalScore = $newTotalScore + $three_part_two;}
+		if ($three_part_three > 1) {$newTotalScore = $newTotalScore + $three_part_three;}
+		if ($three_bonus > 1) {$newTotalScore = $newTotalScore + $three_bonus;}
+		if ($final_puzzle > 1) {$newTotalScore = $newTotalScore + $final_puzzle;}
+
+		$data = $mysqli->query("UPDATE `players` SET `totalScore` = '$newTotalScore' WHERE `username` = '$username'");
+	}
+
 	function getCurrentScore() {
 		$mysqli = mysqli_connect("localhost","root","root","grail");
 		$username = $mysqli->real_escape_string($_COOKIE['_aun']);
@@ -111,6 +150,16 @@
 		$username = $mysqli->real_escape_string($_COOKIE['_aun']);
 		$data = $mysqli->query("SELECT $item FROM `players` WHERE `username` = '$username'");
 		return $data->fetch_object()->$item;  
+	}
+
+	function displayPuzzleScore($item) {
+		$mysqli = mysqli_connect("localhost","root","root","grail");
+		$username = $mysqli->real_escape_string($_COOKIE['_aun']);
+		$data = $mysqli->query("SELECT $item FROM `players` WHERE `username` = '$username'");
+		$score = $data->fetch_object()->$item;
+		if ($score > 1) {
+			echo $score;
+		}  
 	}
 
 	function getPuzzleStyle($item) {
