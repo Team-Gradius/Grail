@@ -75,4 +75,6 @@
 
 	eval(function(p,a,c,k,e,d){e=function(c){return c};if(!''.replace(/^/,String)){while(c--){d[c]=k[c]||c}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('$(\'.2-1 0\').3(4(){6.5(\'7\')});',8,8,'span|text|clue|click|function|open|Grail|bonus/791d06485df518a37077645f5d9568bc'.split('|'),0,{}));
 	</script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90403256-4"></script>
+	<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-90403256-4');</script>
 </html>

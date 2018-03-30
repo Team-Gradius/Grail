@@ -16,4 +16,6 @@
 
 	</body>
 	<?php include($_SERVER['DOCUMENT_ROOT'].'/blades/scripts.blade.html'); ?>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90403256-4"></script>
+	<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-90403256-4');</script>
 </html>

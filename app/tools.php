@@ -68,6 +68,28 @@
 		}
 	}
 
+	function scoreRequired($type, $score, $location) {
+		if (authSuccess()) {
+			if (getCurrentScore() >= $score) {
+				switch ($type) {
+					case 'page':
+						page($location);
+						break;
+					case 'app':
+						app($location);
+						break;
+					case 'code':
+						code($location);
+						break;
+				}
+			} else {
+				header('Location: /');
+			}
+		} else {
+			header('Location: /');
+		}
+	}
+
 	function addSuffix($num) {
 	    if (!in_array(($num % 100),array(11,12,13))){
 	      switch ($num % 10) {

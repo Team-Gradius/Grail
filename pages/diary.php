@@ -19,7 +19,7 @@
 
 			<h3 class="diary-message">
 				Your Score is <span style="color: gold;"><?php echo number_format(getCurrentScore()) ?></span>
-				<br>Current Rank <span style="color: gold;"><?php echo getCurrentRank() ?></span>
+				<br>Current Rank <span style="text-transform: uppercase; color: gold;"><?php echo getCurrentRank() ?></span>
 			</h3>
 
 			<div class="diary-wrapper">
@@ -134,4 +134,6 @@
 	</body>
 	<?php include($_SERVER['DOCUMENT_ROOT'].'/blades/scripts.blade.html'); ?>
 	<script src="assets/js/diary.js"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90403256-4"></script>
+	<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-90403256-4');</script>
 </html>
