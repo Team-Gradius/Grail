@@ -37,6 +37,15 @@ body {
 	margin: 100px auto 30px auto;
 }
 
+.image-half-item {
+	white-space: normal;
+	width: calc(100% / 2);
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	height: auto;
+}
+
 .image-item {
 	white-space: normal;
 	width: calc(100% / 3);
@@ -786,6 +795,11 @@ input::-webkit-inner-spin-button {
 
 	.image-wrapper {
 		margin-top: 40px;
+	}
+
+	.image-half-item {
+		display: block;
+		width: 100%;
 	}
 
 	.image-item {

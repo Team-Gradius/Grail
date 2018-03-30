@@ -10,12 +10,15 @@
 			<img class="sb-diary-icon" src="/assets/img/diary.png">
 		</div>		
 		
-		
+		<div class="image-wrapper">
+			<img class="image-half-item" src="/assets/img/levels/2/table_one.webp">
+			<img class="image-half-item" src="/assets/img/levels/2/table_two.webp">
+		</div>
 
 		<input type="text" class="standard-input" placeholder="Answer">
 
 		<div class="submit-button disabled-state">Enter</div>
-		<div class="success-text"></div>
+		<div class="success-text"></div><br><br>
 
 	</body>
 	<?php include($_SERVER['DOCUMENT_ROOT'].'/blades/scripts.blade.html'); ?>
