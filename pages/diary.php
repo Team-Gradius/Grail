@@ -61,18 +61,15 @@
 					<?php getPuzzleLock('one_bonus'); ?>
 				</div>
 
+				<?php 
 
-				<h1 class="diary-sub level-locked">Level 2 
-					<?php 
-
-					if (getCurrentScore() == 1500) {
-						echo '<div onclick="Grail.open(\'clue/level-two\')" class="clue-button">Clue</div>';
+					if (getCurrentScore() >= 1500) {
+						echo '<h1 class="diary-sub">Level 2 <div onclick="Grail.open(\'clue/level-two\')" class="clue-button">Clue</div></h1>';
 					} else {
-						echo '<div class="clue-button disabled-state">Clue</div>';
+						echo '<h1 class="diary-sub level-locked">Level 2 <div class="clue-button disabled-state">Clue</div></h1>';
 					}
 
-					 ?>
-				</h1>
+				?>
 
 				<div <?php getPartPage('two_part_one', 'level_two/part_one') ?> class="diary-item <?php getPuzzleStyle('two_part_one'); ?>">
 					<h3 class="diary-item-title">Part One</h3>
@@ -98,17 +95,15 @@
 					<?php getPuzzleLock('two_bonus'); ?>
 				</div>
 
-				<h1 class="diary-sub level-locked">Level 3 
-					<?php 
+				<?php 
 
-					if (getCurrentScore() == 15000) {
-						echo '<div onclick="Grail.open(\'clue/level-three\')" class="clue-button">Clue</div>';
+					if (getCurrentScore() >= 15000) {
+						echo '<h1 class="diary-sub">Level 3 <div onclick="Grail.open(\'clue/level-three\')" class="clue-button">Clue</div></h1>';
 					} else {
-						echo '<div class="clue-button disabled-state">Clue</div>';
+						echo '<h1 class="diary-sub level-locked">Level 3 <div class="clue-button disabled-state">Clue</div></h1>';
 					}
 
-					 ?>
-				</h1>
+				?>
 
 				<div <?php getPartPage('three_part_one', 'level_three/part_one') ?> class="diary-item <?php getPuzzleStyle('three_part_one'); ?>">
 					<h3 class="diary-item-title">Part One</h3>
