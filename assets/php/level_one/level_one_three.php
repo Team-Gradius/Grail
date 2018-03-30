@@ -1,9 +1,10 @@
 <?php 
 
 	error_reporting(E_ALL);
-	if (isset($_POST['input']) && isset($_POST['answer'])) {
+	if (isset($_POST['input']) && isset($_POST['answer']) && isset($_POST['count'])) {
 
 		$input = $_POST['input'];
+		$count = $_POST['count'];
 		$answer = $_POST['answer'];
 
 		function grail_crypt($string, $action = 'e') {
@@ -25,9 +26,29 @@
 			$real_answer = strtolower(preg_replace("/[^a-zA-Z 0-9]+/", "", grail_crypt($answer, 'd')));
 			$formatted_input = strtolower(preg_replace("/[^a-zA-Z 0-9]+/", "", $input));
 			
-			if ($formatted_input == 'test') {
-				if ($count == 3 && $fails == 0) {
-					echo json_encode(array('response' => 'true', 'final' => '27ae2ea731cd1ef325264d1255d00a94'));
+			if ($formatted_input == $real_answer) {
+				if ($count == 3) {
+					// Update SQL Record
+					$mysqli = mysqli_connect("localhost","root","root","grail");
+					$username = $mysqli->real_escape_string($_COOKIE['_aun']);
+					$points = $mysqli->query("SELECT * FROM `points` WHERE `point_name` = 'one_part_three'");
+					$point_data = $points->fetch_object();
+					$points_awarded = $point_data->points_awarded;
+					$minimum_points = $point_data->minimum_points;
+					if ($points_awarded != $minimum_points) {
+						$new_award = $points_awarded - 100;
+					} else {
+						$new_award = $minimum_points;
+					}
+
+					if (getPartStatus('one_part_three') == 1) {
+						$mysqli->query("UPDATE `points` SET `points_awarded`= '$new_award' WHERE `point_name` = 'one_part_three'");
+						$mysqli->query("UPDATE `players` SET `one_part_three` = '$points_awarded' WHERE `username` = '$username'");
+						updateTotalScore();
+						echo json_encode(array('complete' => 'true', 'response' => 'true', 'text' => 'Part 3 Complete'));	
+					} else {
+						echo json_encode(array('complete' => 'true', 'response' => 'true', 'text' => 'Already Complete'));	
+					}
 				} else {
 					echo json_encode(array('response' => 'true'));
 				}
@@ -41,31 +62,6 @@
 		}
 
 
-	} else if (isset($_POST['final_key'])) {
-		if ($_POST['final_key'] == '27ae2ea731cd1ef325264d1255d00a94') {
-			$username = $_COOKIE['_aun'];
-			// Update SQL Record
-			$mysqli = mysqli_connect("localhost","root","root","grail");
-			$points = $mysqli->query("SELECT * FROM `points` WHERE `point_name` = 'one_part_one'");
-			$point_data = $points->fetch_object();
-			$points_awarded = $point_data->points_awarded;
-			$minimum_points = $point_data->minimum_points;
-			if ($points_awarded != $minimum_points) {
-				$new_award = $points_awarded - 100;
-			} else {
-				$new_award = $minimum_points;
-			}
-
-			if (getPartStatus('one_part_one') == 1) {
-				$mysqli->query("UPDATE `points` SET `points_awarded`= '$new_award' WHERE `point_name` = 'one_part_one'");
-				$mysqli->query("UPDATE `players` SET `one_part_one` = '$points_awarded' WHERE `username` = '$username'");
-				updateTotalScore();
-				echo json_encode(array('response' => 'true', 'text' => 'Part 1 Complete'));	
-			} else {
-				echo json_encode(array('response' => 'true', 'text' => 'Already Complete'));	
-			}
-			echo json_encode(array('response' => 'complete'));
-		}
 	} else {
 		echo json_encode(array('response' => 'false'));
 	}

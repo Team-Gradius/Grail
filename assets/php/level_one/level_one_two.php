@@ -23,8 +23,8 @@
 			} else if ($id == '134545634') {
 				if (strtolower($answer) == 'facility') {
 					// Update SQL
-					$username = $_COOKIE['_aun'];
 					$mysqli = mysqli_connect("localhost","root","root","grail");
+					$username = $mysqli->real_escape_string($_COOKIE['_aun']);
 					$points = $mysqli->query("SELECT * FROM `points` WHERE `point_name` = 'one_part_two'");
 					$point_data = $points->fetch_object();
 					$points_awarded = $point_data->points_awarded;

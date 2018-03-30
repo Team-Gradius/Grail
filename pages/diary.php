@@ -24,15 +24,10 @@
 
 			<div class="diary-wrapper">
 
-				<!-- TODO:
-					Add link to part, hidden when locked.
-		
-				 -->
-
 				<h1 style="font-size: 18px;" class="diary-sub">Starters</h1>
 				<div class="diary-item part-solved unclickable-part">
 					<h3 class="diary-item-title">Konami Code</h3>
-					<div style="right: 10px" class="score-awarded">0</div>
+					<div style="right: 10px" class="score-awarded"></div>
 				</div>
 				
 				<div onclick="Grail.open('048A3A56B014940E73F89C2F98DB2C06')" class="diary-item part-solved">

@@ -44,9 +44,9 @@
 
 	} else if (isset($_POST['final_key'])) {
 		if ($_POST['final_key'] == '27ae2ea731cd1ef325264d1255d00a94') {
-			$username = $_COOKIE['_aun'];
 			// Update SQL Record
 			$mysqli = mysqli_connect("localhost","root","root","grail");
+			$username = $mysqli->real_escape_string($_COOKIE['_aun']);
 			$points = $mysqli->query("SELECT * FROM `points` WHERE `point_name` = 'one_part_one'");
 			$point_data = $points->fetch_object();
 			$points_awarded = $point_data->points_awarded;
@@ -65,7 +65,6 @@
 			} else {
 				echo json_encode(array('response' => 'true', 'text' => 'Already Complete'));	
 			}
-			echo json_encode(array('response' => 'complete'));
 		}
 	} else {
 		echo json_encode(array('response' => 'false'));

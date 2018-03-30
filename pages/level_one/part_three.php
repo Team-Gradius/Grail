@@ -39,14 +39,14 @@
 		  $quote = $quote[array_rand($quote)];
 
 
-			echo '<div ';
+			echo '<div data-ans="'.grail_crypt($quote->title, 'e').'" class="';
 
-			if ($first_visible == true)
+			if ($first_visible == true) {
+				echo 'book-active';
 				$first_visible = false;
-			else
-				echo 'style="display: none;"';
+			}
 
-			echo ' data-answer="'.grail_crypt($quote->title, 'e').'" class="book-active book-wrapper">
+			echo ' book-wrapper">
 				<h1 class="diary-title">'.$json[$book_key]->genre.'</h1><br>
 				<p class="clue-text-center">"'.$quote->quote.'"</p>
 			</div>';
@@ -76,27 +76,32 @@
 
 		$count = 1;
 		$('.submit-button').on('click', function() {
-			if (!$(this).hasClass('disabled-state')) {
+			if (!$(this).hasClass('disabled-state') && !$(this).hasClass('loading-state')) {
 				$('.submit-button').text('Checking');
 				$('.submit-button').addClass('loading-state');
 				$.ajax({
 					url: '/data/ae50750d2fcdbf4e7d8fbc6e31281f3c',
 					type: 'POST',
-					data: {'input': $.trim($('.book-active input').val()), 'answer': $('.book-active').attr('data-answer')},
+					data: {'input': $.trim($('input').val()), 'answer': $('.book-active').attr('data-ans'), 'count': $count},
 					success: function(result) {
+						console.log(result);
 						var data = $.parseJSON(result);
 						if (data.response == 'true') {
 							$('.submit-button').text('Correct!');
-							$('.clue-text').html(data.text);
-							$('.clue-text').attr('id', data.id);
-							$('.submit-button').text('Enter');
-							$('.submit-button').removeClass('loading-state');
-							$('.haiku-count').text($count+' out of 3');
-							if (data.complete) {
-								Grail.open('diary');
-							}
-							$('input').val('');
-							$count++;
+							setTimeout(function() {
+								if (data.complete) {
+									Grail.open('diary');
+								} else {
+									$active = $('.book-active');
+									$active.next().addClass('book-active');
+									$active.removeClass('book-active');
+									$('.submit-button').text('Enter');
+									$('.submit-button').removeClass('loading-state');
+									$count++;
+									$('input').val('');
+									$('.haiku-count').text($count+' out of 3');
+								}
+							}, 500);
 						} else {
 							$('.success-text').text('');
 							$('.success-text').hide();

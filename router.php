@@ -9,7 +9,7 @@
 	app('tools');
 
 	// Frontend Pages
-		// Core Pages
+		// Core Pages Frontend
 		if ($url_base == '')  {
 			page('scoreboard');
 		} else if ($url_base == '/diary')  {
@@ -17,7 +17,7 @@
 		} else if ($url_base == '/048A3A56B014940E73F89C2F98DB2C06')  {
 			page('first_clue');
 
-		// Level One
+		// Level One Frontend
 		} else if ($url_base == '/clue/level-one')  {
 			authRequired('page', 'level_one/clue');
 		} else if ($url_base == '/level_one/part_one')  {
@@ -26,12 +26,17 @@
 			authAndUnlockRequired('page', 'one_part_two', 'level_one/part_two');
 		} else if ($url_base == '/level_one/part_three')  {
 			authAndUnlockRequired('page', 'one_part_three', 'level_one/part_three');
+		} else if ($url_base == '/bonus/791d06485df518a37077645f5d9568bc')  {
+			authAndUnlockRequired('page', 'one_part_two', 'level_one/bonus_unlock');
+		} else if ($url_base == '/level_one/bonus')  {
+			authAndUnlockRequired('page', 'one_bonus', 'level_one/bonus');
 
 	// Backend Pages
+		// Core Pages Backend
 		} else if ($url_base == '/data/15ec430e978d726133be311b5d3b1097')  {
 			code('first_clue');
 
-		// Level One PHP
+		// Level One Backend
 		} else if ($url_base == '/data/8c154af9ac2bf94569cb67a89d09b05e')  {
 			code('level_one/level_one_clue');
 		} else if ($url_base == '/data/8acae5da49283f7f59a919dc87b74453')  {
@@ -40,6 +45,8 @@
 			code('level_one/level_one_two');
 		} else if ($url_base == '/data/ae50750d2fcdbf4e7d8fbc6e31281f3c')  {
 			code('level_one/level_one_three');
+		} else if ($url_base == '/data/791d06485df518a37077645f5d9568bc')  {
+			code('level_one/level_one_bonus');
 
 	// Other
 		} else if ($url_base == '/auth/create')  {

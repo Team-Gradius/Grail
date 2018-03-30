@@ -42,6 +42,19 @@ body {
 	display: block;
 }
 
+.book-wrapper {
+	width: 80%;
+	max-width: 600px;
+	user-select: none;
+	margin: 30px auto;
+	display: none;
+	text-align: left;
+}
+
+.book-active {
+	display: block;
+}
+
 .ms-line {
 	text-align: left;
 	font-size: 14px;
@@ -64,12 +77,14 @@ body {
 	margin-top: 70px;
 	margin-bottom: -50px;
 	font-size: 12px;
+	user-select: none;
 }
 
 .ms-count {
 	color: #2196f3;
 	margin-top: 70px;
 	font-size: 12px;
+	user-select: none;
 }
 
 .ms-wrong {
