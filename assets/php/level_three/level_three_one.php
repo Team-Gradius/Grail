@@ -9,8 +9,6 @@
 			$username = $mysqli->real_escape_string($_COOKIE['_aun']);
 			if (strtolower($answer) == "final fantasy") {
 
-				$mysqli = mysqli_connect("localhost","root","root","grail");
-				$username = $mysqli->real_escape_string($_COOKIE['_aun']);
 				$points = $mysqli->query("SELECT * FROM `points` WHERE `point_name` = 'three_part_one'");
 				$point_data = $points->fetch_object();
 				$points_awarded = $point_data->points_awarded;

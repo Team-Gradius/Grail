@@ -58,7 +58,7 @@
 		} else if ($url_base == '/data/15ec430e978d726133be311b5d3b1097')  {
 			code('first_clue');
 		} else if ($url_base == '/data/f801c0e62aefd20b2d33dd2ab43e4784')  {
-			code('final_puzzle');
+			code('final_puzzle/text');
 
 		// Level One Backend
 		} else if ($url_base == '/data/8c154af9ac2bf94569cb67a89d09b05e')  {
