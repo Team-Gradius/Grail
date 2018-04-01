@@ -57,9 +57,10 @@
 					<td class="sb-name">
 						<span class="sb-name-value">'.$info['username'].'</span>
 						<div class="score-icons">';
-						getScoreboardIcon('level_one', 'lvlOne', $info['username']);
-						getScoreboardIcon('level_two', 'lvlTwo', $info['username']);
-						getScoreboardIcon('level_three', 'lvlThree', $info['username']);
+						getScoreboardIcon(1500, 'lvlOne', $info['username']);
+						getScoreboardIcon(15000, 'lvlTwo', $info['username']);
+						getScoreboardIcon(150000, 'lvlThree', $info['username']);
+						getGrailIcon($info['username']);
 					echo '</div>
 					</td>
 					</tr>';

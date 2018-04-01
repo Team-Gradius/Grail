@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Grail! - Level 1.2</title>
+		<title>Grail! - Level 3.3</title>
 		<?php include($_SERVER['DOCUMENT_ROOT'].'/blades/head.blade.html'); ?>
 	</head>
 	<body>
@@ -10,13 +10,11 @@
 			<img class="sb-diary-icon" src="/assets/img/diary.png">
 		</div>	
 
-		 <div class="haiku-count">1 out of 3</div>
+		 <div style="text-transform: uppercase; margin-bottom: -70px;" class="haiku-count">1 out of 3</div>
 
-		<p id="234902384" class="clue-text">
-			In an open field 
-			<br>outdoors. Still much left to do.
-			<br><span>Time</span> to count the leaves.
-		</p>
+		<div id="3947304" class="video-wrapper">
+			<iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/UUsyX6Wc1GY?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+		</div>
 
 		<input type="text" class="standard-input" placeholder="Answer">
 		<div class="submit-button disabled-state">Enter</div>
@@ -41,9 +39,9 @@
 				$('.submit-button').text('Checking');
 				$('.submit-button').addClass('loading-state');
 				$.ajax({
-					url: '/data/d3d84d54a99c8cac66e9e06fca546304',
+					url: '/data/c1c3898ea45aaeb742a0a56482a89108',
 					type: 'POST',
-					data: {'id': $('.clue-text').attr('id'), 'answer': $.trim($('input').val())},
+					data: {'id': $('.video-wrapper').attr('id'), 'answer': $.trim($('input').val())},
 					success: function(result) {
 						var data = $.parseJSON(result);
 						if (data.response == 'true') {
@@ -52,8 +50,8 @@
 								if (data.complete) {
 									Grail.open('diary');
 								} else {
-									$('.clue-text').html(data.text);
-									$('.clue-text').attr('id', data.id);
+									$('iframe').attr('src', 'https://www.youtube-nocookie.com/embed/'+data.video_id+'?rel=0&amp;showinfo=0');
+									$('.video-wrapper').attr('id', data.id);
 									$('.submit-button').text('Enter');
 									$('.submit-button').removeClass('loading-state');
 									$count++;
@@ -74,8 +72,6 @@
 				});
 			}
 		});
-
-	eval(function(p,a,c,k,e,d){e=function(c){return c};if(!''.replace(/^/,String)){while(c--){d[c]=k[c]||c}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('$(\'.2-1 0\').3(4(){6.5(\'7\')});',8,8,'span|text|clue|click|function|open|Grail|bonus/791d06485df518a37077645f5d9568bc'.split('|'),0,{}));
 	</script>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90403256-4"></script>
 	<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-90403256-4');</script>

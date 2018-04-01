@@ -9,8 +9,9 @@
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 
-		if (strlen($username) <= 10) {
+		if (strlen($username) <= 10 && strlen($username) >= 3) {
 
+			str_replace(' ', '', $username);
 			$username_check = $mysqli->real_escape_string($username);
 
 			$salt = substr(uniqid(rand(), true), 16, 16);

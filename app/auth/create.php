@@ -36,8 +36,9 @@
 		}
 
 		$('input').on('input', function() {
+			this.value = this.value.replace(/\s/g, "");
 			$('.submit-failed').hide();
-			if (isEmail($.trim($('#email').val())) && $.trim($('#username').val()).length > 0 && $.trim($('#password').val()).length > 0) {
+			if (isEmail($.trim($('#email').val())) && $.trim($('#username').val()).length >= 3 && $.trim($('#password').val()).length > 0) {
 				$('.submit-button').removeClass('disabled-state');
 			} else {
 				$('.submit-button').addClass('disabled-state');
@@ -60,7 +61,7 @@
 									window.location.href = data.url;
 								}, 500);
 							} else if (daata.response == 'long') {
-								alert('Maximum name length of 10 characters!');
+								alert('Name must be between 3-10 characters!');
 							}else {
 								$('.submit-failed').show();
 								$('.submit-button').text('Enter');

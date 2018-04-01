@@ -43,30 +43,39 @@
 			}
 		});
 
+		$('body').on('keydown', function(e) {
+			if (e.keyCode == 13)
+				submitLogin();
+		});
+
 		$('.submit-button').on('click', function() {
+			submitLogin();
+		});
+
+		function submitLogin() {
 			if (!$(this).hasClass('disabled-state')) {
-				$('.submit-button').text('Loading');
-				$('.submit-button').addClass('loading-state');
-					$.ajax({
-						url: '/auth/data/login',
-						type: 'POST',
-						data: {'email': $.trim($('#email').val()), 'password': $.trim($('#password').val())},
-						success: function(result) {
-							var data = $.parseJSON(result);
-							if (data.response == 'true') {
-								$('.submit-button').text('Done!');
-								setTimeout(function() {
-									window.location.href = data.url;
-								}, 500);
-							} else {
-								$('.submit-failed').show();
-								$('.submit-button').text('Enter');
-								$('.submit-button').removeClass('loading-state');
-							}
+			$('.submit-button').text('Loading');
+			$('.submit-button').addClass('loading-state');
+				$.ajax({
+					url: '/auth/data/login',
+					type: 'POST',
+					data: {'email': $.trim($('#email').val()), 'password': $.trim($('#password').val())},
+					success: function(result) {
+						var data = $.parseJSON(result);
+						if (data.response == 'true') {
+							$('.submit-button').text('Done!');
+							setTimeout(function() {
+								window.location.href = data.url;
+							}, 500);
+						} else {
+							$('.submit-failed').show();
+							$('.submit-button').text('Enter');
+							$('.submit-button').removeClass('loading-state');
 						}
-					});
-				}
-			});
+					}
+				});
+			}
+		}
 	</script>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90403256-4"></script>
 	<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-90403256-4');</script>

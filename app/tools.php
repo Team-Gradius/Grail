@@ -206,12 +206,21 @@
 		}
 	}
 
-	function getScoreboardIcon($name, $location, $username) {
+	function getScoreboardIcon($score, $location, $username) {
 		$mysqli = mysqli_connect("localhost","root","root","grail");
-		$data = $mysqli->query("SELECT $name FROM `players` WHERE `username` = '$username'");
-		$check = $data->fetch_object()->$name;   
-		if ($check == 'true') {
+		$data = $mysqli->query("SELECT `totalScore` FROM `players` WHERE `username` = '$username'");
+		$check = $data->fetch_object()->totalScore;   
+		if ($check >= $score) {
 			echo '<img draggable="false" class="level-icon" src="/assets/img/'.$location.'.png">';
+		}
+	}
+
+	function getGrailIcon($username) {
+		$mysqli = mysqli_connect("localhost","root","root","grail");
+		$data = $mysqli->query("SELECT `final_puzzle` FROM `players` WHERE `username` = '$username'");
+		$check = $data->fetch_object()->final_puzzle;   
+		if ($check > 1) {
+			echo '<img draggable="false" class="level-icon" src="/assets/img/favicon.png">';
 		}
 	}
 
