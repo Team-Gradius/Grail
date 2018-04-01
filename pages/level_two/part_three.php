@@ -11,7 +11,6 @@
 		</div>		
 		
 		<img class="wall-image" src="/assets/img/levels/2/metadeth.jpg">
-		<a class="download-link" href="/assets/img/levels/2/metadeth.jpg" download="metadeth.jpg">Download image</a>
 
 		<input type="text" class="longer-input" placeholder="Answer">
 

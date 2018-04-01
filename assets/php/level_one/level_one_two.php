@@ -9,7 +9,7 @@
 		if (isset($_COOKIE['_aun']) && isset($_COOKIE['_apw'])) {
 			
 			if ($id == '234902384') {
-				if (is_numeric($answer) && $answer == 69105) {
+				if (strtolower(preg_replace("/[^a-zA-Z 0-9]+/", "", $answer)) == '69105') {
 					echo json_encode(array('response' => 'true', 'id' => '634502644', 'text' => 'To fight, bare knuckle<br>in the streets, a hunter must<br>defeat a great foe.'));
 				} else {
 					echo json_encode(array('response' => 'false'));
