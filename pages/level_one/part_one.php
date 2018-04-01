@@ -135,7 +135,6 @@
 			type: 'POST',
 			data: {'input': $input, 'answer': $answer, 'fails': $fail_count, 'count': $quote_count},
 			success: function(result) {
-				console.log(result);
 				var data = $.parseJSON(result);
 				if (data.response == 'true') {
 					$('.submit-button').text('Correct!');

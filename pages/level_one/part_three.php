@@ -84,7 +84,6 @@
 					type: 'POST',
 					data: {'input': $.trim($('input').val()), 'answer': $('.book-active').attr('data-ans'), 'count': $count},
 					success: function(result) {
-						console.log(result);
 						var data = $.parseJSON(result);
 						if (data.response == 'true') {
 							$('.submit-button').text('Correct!');
