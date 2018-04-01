@@ -10,7 +10,7 @@
 			<img class="sb-diary-icon" src="/assets/img/diary.png">
 		</div>		
 		
-		<img class="wall-image" src="/assets/img/levels/2/metadeth.jpg">
+		<img style="display: block;" class="wall-image" src="/assets/img/levels/2/metadeth.jpg">
 
 		<input type="text" class="longer-input" placeholder="Answer">
 

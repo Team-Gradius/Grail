@@ -14,17 +14,17 @@
 
 			<?php 
 
-				$colours = array('#F44336', '#FF9800', '#2196F3', '#673AB7', '#FFFFFF', '#FFEB3B');
+				$colours = array('#F44336', '#FF9800', '#2196F3', '#673AB7', '#00C853', '#FFFFFF', '#FFEB3B');
 				$increment = rand(1, 9);
 				$increment_2 = rand(1, 2);
 				for ($i=1; $i <= 9; $i++) { 
 					if ($i == $increment) {
 						if ($increment_2 == 1) {
 							$first = '#00C853';
-							$second = '#E91E63';
+							$second = '#F06292';
 						} else {
 							$second = '#00C853';
-							$first = '#E91E63';
+							$first = '#F06292';
 						}
 						echo '<div id="2332" class="grail-holder"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="19px" height="58px" viewBox="0 0 19 58" enable-background="new 0 0 19 58" xml:space="preserve"><polygon fill="'.$first.'" points="0,0 0,26 4,26 4,30 8,30 8,34 15,34 15,50 11,50 11,54 7,54 7,58 15,58 19,58 19,0 "/></svg><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="19px" height="58px" viewBox="0 0 19 58" enable-background="new 0 0 19 58" xml:space="preserve"><polygon fill="'.$second.'" points="0,0 0,58 4,58 12,58 12,54 8,54 8,50 4,50 4,34 11,34 11,30 15,30 15,26 19,26 19,0 "/></svg></div>';
 					} else {
