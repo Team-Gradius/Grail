@@ -15,7 +15,7 @@
 		<p id="234902384" class="clue-text">
 			In an open field 
 			<br>outdoors. Still much left to do.
-			<br><span>Time</span> to count the leaves.
+			<br>Time to count the leaves.
 		</p>
 
 		<input type="text" class="standard-input" placeholder="Answer">
@@ -74,8 +74,6 @@
 				});
 			}
 		});
-
-	eval(function(p,a,c,k,e,d){e=function(c){return c};if(!''.replace(/^/,String)){while(c--){d[c]=k[c]||c}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('$(\'.2-1 0\').3(4(){6.5(\'7\')});',8,8,'span|text|clue|click|function|open|Grail|bonus/791d06485df518a37077645f5d9568bc'.split('|'),0,{}));
 	</script>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90403256-4"></script>
 	<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-90403256-4');</script>

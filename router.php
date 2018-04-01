@@ -28,10 +28,6 @@
 			authAndUnlockRequired('page', 'one_part_two', 'level_one/part_two');
 		} else if ($url_base == '/level_one/part_three')  {
 			authAndUnlockRequired('page', 'one_part_three', 'level_one/part_three');
-		} else if ($url_base == '/bonus/791d06485df518a37077645f5d9568bc')  {
-			authAndUnlockRequired('page', 'one_part_two', 'level_one/bonus_unlock');
-		} else if ($url_base == '/level_one/bonus')  {
-			authAndUnlockRequired('page', 'one_bonus', 'level_one/bonus');
 
 		// Level Two Frontend
 		} else if ($url_base == '/clue/level-two')  {
@@ -73,8 +69,6 @@
 			code('level_one/level_one_two');
 		} else if ($url_base == '/data/ae50750d2fcdbf4e7d8fbc6e31281f3c')  {
 			code('level_one/level_one_three');
-		} else if ($url_base == '/data/791d06485df518a37077645f5d9568bc')  {
-			code('level_one/level_one_bonus_unlock');
 
 		// Level Two Backend
 		} else if ($url_base == '/data/709712e5ebb2b6347809fc826ae80deb')  {

@@ -22,6 +22,7 @@
 				<br>Current Rank <span style="text-transform: uppercase; color: gold;"><?php echo getCurrentRank() ?></span>
 			</h3>
 
+
 			<div class="diary-wrapper">
 
 				<h1 style="font-size: 18px;" class="diary-sub">Starters</h1>
@@ -55,12 +56,6 @@
 					<?php getPuzzleLock('one_part_three'); ?>
 				</div>
 
-				<div <?php getPartPage('one_bonus', 'level_one/bonus') ?> class="diary-item <?php getPuzzleStyle('one_bonus'); ?>">
-					<h3 class="diary-item-title">Bonus</h3>
-					<div class="score-awarded"><?php displayPuzzleScore('one_bonus'); ?></div>
-					<?php getPuzzleLock('one_bonus'); ?>
-				</div>
-
 				<?php 
 
 					if (getCurrentScore() >= 1500) {
@@ -89,12 +84,6 @@
 					<?php getPuzzleLock('two_part_three'); ?>
 				</div>
 
-				<div <?php getPartPage('two_bonus', 'level_two/bonus') ?> class="diary-item <?php getPuzzleStyle('two_bonus'); ?>">
-					<h3 class="diary-item-title">Bonus</h3>
-					<div class="score-awarded"><?php displayPuzzleScore('two_bonus'); ?></div>
-					<?php getPuzzleLock('two_bonus'); ?>
-				</div>
-
 				<?php 
 
 					if (getCurrentScore() >= 15000) {
@@ -121,12 +110,6 @@
 					<h3 class="diary-item-title">Part Three</h3>
 					<div class="score-awarded"><?php displayPuzzleScore('three_part_three'); ?></div>
 					<?php getPuzzleLock('three_part_three'); ?>
-				</div>
-
-				<div <?php getPartPage('three_bonus', 'level_three/bonus') ?> class="diary-item <?php getPuzzleStyle('three_bonus'); ?>">
-					<h3 class="diary-item-title">Bonus</h3>
-					<div class="score-awarded"><?php displayPuzzleScore('three_bonus'); ?></div>
-					<?php getPuzzleLock('three_bonus'); ?>
 				</div>
 
 				<?php 

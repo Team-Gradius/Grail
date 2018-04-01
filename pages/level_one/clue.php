@@ -31,11 +31,6 @@
 			<br>littered, full, with fables
 			<br>but will this help to get you there?
 			<br>For that you'll need Green Gables.
-			<br><br>
-			<br>And if you are sharp-witted
-			<br>or find yourself behind,
-			<br>for you there are some extra points
-			<br>a bonus you can find.
 		</p>
 
 		<input type="text" class="standard-input" placeholder="Answer">

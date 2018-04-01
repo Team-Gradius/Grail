@@ -910,6 +910,27 @@ input::-webkit-inner-spin-button {
 	user-select: none;
 }
 
+.bonus-icon {
+	width: 24px;
+	margin: 0 auto;
+	padding: 0;
+	vertical-align: top;
+	height: 24px;
+	margin-bottom: 0;
+	margin-top: 5px;
+	display: inline-block;
+	user-select: none;
+}
+
+.bonus-title {
+	display: inline-block;
+	margin-left: 10px;
+	text-transform: uppercase;
+	color: #00C853;
+	font-size: 12px;
+	margin-bottom: -50px;
+}
+
 .sb-table {
 	width: 100%;
 	max-width: 800px;
