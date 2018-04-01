@@ -132,7 +132,7 @@
 				<?php 
 
 					if (getCurrentScore() >= 150000) {
-						echo '<h1 style="text-transform: uppercase;" class="diary-sub">The Grail</h1><div onclick="Grail.open(\'final_puzzle\')" class="diary-item"><h3 class="diary-item-title">Final Puzzle</h3><div class="score-awarded">'.displayPuzzleScore('final_puzzle').'</div><img draggable="false" class="lock-icon" src="/assets/img/unlocked.png"></div>';
+						echo '<h1 style="text-transform: uppercase;" class="diary-sub">The Grail</h1><div onclick="Grail.open(\'final_puzzle\')" class="diary-item"><h3 class="diary-item-title">Final Puzzle</h3><div class="score-awarded">'.getPuzzleScore('final_puzzle').'</div><img draggable="false" class="lock-icon" src="/assets/img/unlocked.png"></div>';
 					} else {
 						echo '<h1 style="text-transform: uppercase;" class="diary-sub level-locked">The Grail</h1><div class="diary-item part-disabled"><h3 class="diary-item-title">Final Puzzle</h3><div class="score-awarded"></div><img draggable="false" class="lock-icon" src="/assets/img/locked.png"></div>';
 					}

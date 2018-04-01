@@ -25,7 +25,7 @@
 			
 			$real_answer = strtolower(preg_replace("/[^a-zA-Z 0-9]+/", "", grail_crypt($answer, 'd')));
 			$formatted_input = strtolower(preg_replace("/[^a-zA-Z 0-9]+/", "", $input));
-			if ($formatted_input == 'test') {
+			if ($formatted_input == $real_answer) {
 				setcookie('final_puzzle_stage', 1, time()+1, '/');
 				echo json_encode(array('response' => 'true'));
 			} else {

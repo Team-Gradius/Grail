@@ -13,6 +13,36 @@ html {
     display: none; 
 }
 
+.chatbox {
+	width: 90%;
+	min-height: 200px;
+	margin: 70px auto 20px auto;
+	max-width: 500px;
+	border: 1px solid #333;
+	background-color: black;
+	text-align: left;
+	user-select: none;
+	box-sizing: border-box;
+	position: relative;
+	box-shadow: 8px 8px 0px #333;
+}
+
+.chatbox > input {
+	position: absolute;
+	border: 0;
+	background-color: black;
+	color: white;
+	font-family: 'Press Start 2P';
+	font-size: 12px;
+	left: 0;
+	bottom: 0;
+	width: calc(100% - 10px);
+	padding: 0;
+	padding-left: 10px;
+	height: 30px;
+	outline: none;
+}
+
 body {
 	margin: 0;
 	padding: 0;
@@ -27,6 +57,91 @@ body {
 	background: radial-gradient(ellipse at center, #0d0b29 0%,#05050c 100%);
 	color: white;
 	font-family: 'Press Start 2P';
+}
+
+.grail-title {
+	margin-top: 80px;
+	font-size: 27px;
+	margin-left: 30px;
+	margin-right: 30px;
+	color: gold;
+	text-align: center;
+	text-transform: uppercase;
+	display: inline-block;
+	user-select: none;
+}
+
+.grail-sub {
+	font-size: 18px;
+	margin-top: 40px;
+	margin-left: 30px;
+	margin-right: 30px;
+	color: white;
+	line-height: 30px;
+	text-align: center;
+	text-transform: uppercase;
+	user-select: none;
+}
+
+.grail-score {
+	font-size: 16px;
+	margin: 0 auto;
+	margin-top: 20px;
+	max-width: 450px;
+	line-height: 30px;
+	padding: 0px 30px 0px 30px;
+	color: white;
+	text-align: center;
+	text-transform: uppercase;
+	user-select: none;
+}
+
+.grail-score > span {
+	color: #ae00ff;
+}
+
+.grail-text {
+	margin-top: 70px;
+	line-height: 30px;
+	font-size: 14px;
+	margin-left: 30px;
+	margin-right: 30px;
+	color: #2196f3;
+	text-align: center;
+	text-transform: uppercase;
+	user-select: none;
+}
+
+.grail-text > a {
+	text-decoration: none;
+	color: gold;
+}
+
+.grail-image {
+	display: inline-block;
+	width: 32px;
+	vertical-align: bottom;
+}
+
+.grail-wrapper {
+	font-size: 0;
+	text-align: center;
+	width: 70%;
+	max-width: 400px;
+	margin: 70px auto 20px auto;
+}
+
+.grail-holder {
+	cursor: pointer;
+	font-size: 0;
+	display: inline-block;
+	margin: 20px;
+	transition: all 0.1s;
+}
+
+.grail-holder:hover {
+	transition: all 0.1s;
+	transform: scale(1.1);
 }
 
 .image-wrapper {
@@ -346,6 +461,27 @@ body {
 	right: 10px;
 	top: 9px;
 	height: 24px;
+}
+
+
+.messages {
+	padding-bottom: 30px;
+}
+
+.messages > .message > speaker {
+	color: #33ff00;
+	text-transform: uppercase;
+}
+
+.messages > .message > you {
+	color: red;
+	text-transform: uppercase;
+}
+
+.messages > .message {
+	font-size: 12px;
+	padding: 10px;
+	line-height: 20px;
 }
 
 .diary-close {
@@ -892,6 +1028,15 @@ input::-webkit-inner-spin-button {
 		left: 0;
 		right: 0;
 		bottom: 30px;
+	}
+
+	.score-awarded {
+		font-size: 13px;
+	}
+
+	.grail-text {
+		margin-top: 40px;
+		font-size: 12px;
 	}
 
 	.sb-table tr > th {

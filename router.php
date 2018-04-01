@@ -59,6 +59,10 @@
 			code('first_clue');
 		} else if ($url_base == '/data/f801c0e62aefd20b2d33dd2ab43e4784')  {
 			code('final_puzzle/text');
+		} else if ($url_base == '/data/dc8260de4ce9340741acadd190760a1e')  {
+			code('final_puzzle/grail');
+		} else if ($url_base == '/data/d800eb0f85ee8f9832c871071a5d095f')  {
+			code('final_puzzle/chat');
 
 		// Level One Backend
 		} else if ($url_base == '/data/8c154af9ac2bf94569cb67a89d09b05e')  {

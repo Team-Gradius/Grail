@@ -111,7 +111,6 @@
 					type: 'POST',
 					data: {'input': $.trim($('input').val()), 'answer': $('.video-wrapper').attr('data-ans')},
 					success: function(result) {
-						console.log(result);
 						var data = $.parseJSON(result);
 						if (data.response == 'true') {
 							$('.submit-button').text('Correct!');
