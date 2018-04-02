@@ -11,15 +11,20 @@
 
 		if (strlen($username) <= 10 && strlen($username) >= 3) {
 
-			str_replace(' ', '', $username);
+			$username = str_replace(' ', '', $username);
+			$username = strtolower($username);
+			$email = strtolower($email);
+
 			$username_check = $mysqli->real_escape_string($username);
+			$email_check = $mysqli->real_escape_string($email);
 
 			$salt = substr(uniqid(rand(), true), 16, 16);
 			$hash = crypt($password, $salt);
 
 			$data = $mysqli->query("SELECT `username` FROM `players` WHERE `username` = '$username_check'");
+			$data_2 = $mysqli->query("SELECT `email` FROM `players` WHERE `email` = '$email_check'");
 
-			if ($data->num_rows > 0)
+			if ($data->num_rows > 0 || $data_2->num_rows > 0)
 				$status = true;
 
 			if ($status == false) {

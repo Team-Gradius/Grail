@@ -19,7 +19,7 @@
 		<input autocomplete="off" id="password" type="password" class="detail-input" placeholder="Password">
 
 		<div class="submit-button disabled-state">Enter</div>
-		<h1 class="submit-failed">Username taken</h1>
+		<h1 class="submit-failed">Username/Email in use</h1>
 
 		</div>
 
@@ -60,7 +60,7 @@
 								setTimeout(function() {
 									window.location.href = data.url;
 								}, 500);
-							} else if (daata.response == 'long') {
+							} else if (data.response == 'long') {
 								alert('Name must be between 3-10 characters!');
 							}else {
 								$('.submit-failed').show();

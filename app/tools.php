@@ -202,9 +202,8 @@
 
 	function getScoreboardIcon($score, $location, $username) {
 		$mysqli = mysqli_connect("localhost","root","root","grail");
-		$username = $mysqli->real_escape_string($_COOKIE['_aun']);
 		$data = $mysqli->query("SELECT `totalScore` FROM `players` WHERE `username` = '$username'");
-		$check = $data->fetch_object()->totalScore;   
+		$check = $data->fetch_object()->totalScore; 
 		if ($check >= $score) {
 			echo '<img draggable="false" class="level-icon" src="/assets/img/'.$location.'.png">';
 		}
@@ -212,7 +211,6 @@
 
 	function getGrailIcon($username) {
 		$mysqli = mysqli_connect("localhost","root","root","grail");
-		$username = $mysqli->real_escape_string($_COOKIE['_aun']);
 		$data = $mysqli->query("SELECT `final_puzzle` FROM `players` WHERE `username` = '$username'");
 		$check = $data->fetch_object()->final_puzzle;   
 		if ($check > 1) {
