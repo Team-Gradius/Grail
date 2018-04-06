@@ -9,7 +9,6 @@
 			$username = $mysqli->real_escape_string($_COOKIE['_aun']);
 			if (strtolower(preg_replace("/[^a-zA-Z 0-9]+/", "", $answer)) == "whats the story morning glory") {
 
-				$mysqli = mysqli_connect("localhost","root","root","grail");
 				$username = $mysqli->real_escape_string($_COOKIE['_aun']);
 				$points = $mysqli->query("SELECT * FROM `points` WHERE `point_name` = 'two_part_three'");
 				$point_data = $points->fetch_object();

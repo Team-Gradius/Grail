@@ -1,5 +1,5 @@
 $('.sb-name').on('mouseover', function() {
-	if ($(document).width() <= 750 && $(this).children('.score-icons').length > 0) {
+	if ($(document).width() <= 750 && $(this).children('.score-icons').children('.level-icon').length > 0) {
 		$(this).children('.sb-name-value').hide();
 		$(this).children('.score-icons').show();
 	}
@@ -136,7 +136,7 @@ $bronze_consist = false;
 $('tr').each(function(i) {
 	if (i == 0)
         return true;
-	if ($gold_count < 10) {
+	if ($gold_count < 5) {
 		if ($gold_count == 0) {
 			$(this).css('color', $epic);
 		} else {
@@ -144,7 +144,7 @@ $('tr').each(function(i) {
 			$gold = getTintedColor($gold, $gold_count * -3);
 		}
 		$gold_count++;
-	} else if ($silver_count < 10) {
+	} else if ($silver_count < 5) {
 		$(this).css('color', $silver);
 		$silver = getTintedColor($silver, $silver_count * -3);
 		$silver_count++;

@@ -11,8 +11,8 @@
 		</div>		
 		
 		<div class="image-wrapper">
-			<img class="image-half-item" src="/assets/img/levels/2/table_two.webp">
-			<img class="image-half-item" src="/assets/img/levels/2/table_one.webp">
+			<img class="image-half-item" src="/assets/img/levels/2/table_two.png">
+			<img class="image-half-item" src="/assets/img/levels/2/table_one.png">
 		</div>
 
 		<input type="text" class="standard-input" placeholder="Answer">

@@ -1,5 +1,12 @@
 <?php 
 
+	function connectDB() {
+		static $mysqli;
+	    if ($mysqli == NULL) 
+	        $mysqli = mysqli_connect("p:localhost","root","root","grail");
+	    return $mysqli;
+	}
+
 	function authRequired($type, $location) {
 		if (authSuccess()) {
 			switch ($type) {
@@ -21,7 +28,7 @@
 
 	function authSuccess() {
 		if (isset($_COOKIE['_aun']) && isset($_COOKIE['_apw'])) {
-			$mysqli = mysqli_connect("localhost","root","root","grail");
+			$mysqli = connectDB();
 			$username = $mysqli->real_escape_string($_COOKIE['_aun']);
 			$password = $mysqli->real_escape_string($_COOKIE['_apw']);
 			$data = $mysqli->query("SELECT `username`, `passwordHash` FROM `players` WHERE `username` = '$username' AND `passwordHash` = '$password'");
@@ -35,7 +42,7 @@
 	}
 
 	function getPuzzleUnlockStatus($item) {
-		$mysqli = mysqli_connect("localhost","root","root","grail");
+		$mysqli = connectDB();
 		$username = $mysqli->real_escape_string($_COOKIE['_aun']);
 		$data = $mysqli->query("SELECT $item FROM `players` WHERE `username` = '$username'");
 		$check = $data->fetch_object()->$item; 
@@ -102,7 +109,7 @@
 	}
 
 	function updateTotalScore() {
-		$mysqli = mysqli_connect("localhost","root","root","grail");
+		$mysqli = connectDB();
 		$username = $mysqli->real_escape_string($_COOKIE['_aun']);
 		$data = $mysqli->query("SELECT * FROM `players` WHERE `username` = '$username'");
 		$info = $data->fetch_object();  
@@ -135,14 +142,14 @@
 	}
 
 	function getCurrentScore() {
-		$mysqli = mysqli_connect("localhost","root","root","grail");
+		$mysqli = connectDB();
 		$username = $mysqli->real_escape_string($_COOKIE['_aun']);
 		$data = $mysqli->query("SELECT `totalScore` FROM `players` WHERE `username` = '$username'");
 		return $data->fetch_object()->totalScore;  
 	}
 
 	function getCurrentRank() {
-		$mysqli = mysqli_connect("localhost","root","root","grail");
+		$mysqli = connectDB();
 		$username = $mysqli->real_escape_string($_COOKIE['_aun']);
 		$data = $mysqli->query("SELECT `username`, `totalScore`, `dateCreated` FROM `players` WHERE 1 ORDER BY `totalScore` DESC, `dateCreated` ASC");
 		$i = 1;
@@ -155,21 +162,21 @@
 	}
 
 	function getPartStatus($item) {
-		$mysqli = mysqli_connect("localhost","root","root","grail");
+		$mysqli = connectDB();
 		$username = $mysqli->real_escape_string($_COOKIE['_aun']);
 		$data = $mysqli->query("SELECT $item FROM `players` WHERE `username` = '$username'");
 		return $data->fetch_object()->$item;  
 	}
 
 	function getPuzzleScore($item) {
-		$mysqli = mysqli_connect("localhost","root","root","grail");
+		$mysqli = connectDB();
 		$username = $mysqli->real_escape_string($_COOKIE['_aun']);
 		$data = $mysqli->query("SELECT $item FROM `players` WHERE `username` = '$username'");
 		return $data->fetch_object()->$item;  
 	}
 
 	function displayPuzzleScore($item) {
-		$mysqli = mysqli_connect("localhost","root","root","grail");
+		$mysqli = connectDB();
 		$username = $mysqli->real_escape_string($_COOKIE['_aun']);
 		$data = $mysqli->query("SELECT $item FROM `players` WHERE `username` = '$username'");
 		$score = $data->fetch_object()->$item;
@@ -179,7 +186,7 @@
 	}
 
 	function getPuzzleStyle($item) {
-		$mysqli = mysqli_connect("localhost","root","root","grail");
+		$mysqli = connectDB();
 		$username = $mysqli->real_escape_string($_COOKIE['_aun']);
 		$data = $mysqli->query("SELECT $item FROM `players` WHERE `username` = '$username'");
 		$check = $data->fetch_object()->$item;  
@@ -191,7 +198,7 @@
 	}
 
 	function getPartPage($item, $location) {
-		$mysqli = mysqli_connect("localhost","root","root","grail");
+		$mysqli = connectDB();
 		$username = $mysqli->real_escape_string($_COOKIE['_aun']);
 		$data = $mysqli->query("SELECT $item FROM `players` WHERE `username` = '$username'");
 		$check = $data->fetch_object()->$item;  
@@ -201,7 +208,7 @@
 	}
 
 	function getScoreboardIcon($score, $location, $username) {
-		$mysqli = mysqli_connect("localhost","root","root","grail");
+		$mysqli = connectDB();
 		$data = $mysqli->query("SELECT `totalScore` FROM `players` WHERE `username` = '$username'");
 		$check = $data->fetch_object()->totalScore; 
 		if ($check >= $score) {
@@ -210,7 +217,7 @@
 	}
 
 	function getGrailIcon($username) {
-		$mysqli = mysqli_connect("localhost","root","root","grail");
+		$mysqli = connectDB();
 		$data = $mysqli->query("SELECT `final_puzzle` FROM `players` WHERE `username` = '$username'");
 		$check = $data->fetch_object()->final_puzzle;   
 		if ($check > 1) {
@@ -219,7 +226,7 @@
 	}
 
 	function getPuzzleLock($item) {
-		$mysqli = mysqli_connect("localhost","root","root","grail");
+		$mysqli = connectDB();
 		$username = $mysqli->real_escape_string($_COOKIE['_aun']);
 		$data = $mysqli->query("SELECT $item FROM `players` WHERE `username` = '$username'");
 		$check = $data->fetch_object()->$item;  

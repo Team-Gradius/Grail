@@ -10,7 +10,6 @@
 			$username = $mysqli->real_escape_string($_COOKIE['_aun']);
 			if (strtolower($answer_one) == "happy days" && strtolower($answer_two) == "lost" || strtolower($answer_two) == "happy days" && strtolower($answer_one) == "lost") {
 
-				$mysqli = mysqli_connect("localhost","root","root","grail");
 				$username = $mysqli->real_escape_string($_COOKIE['_aun']);
 				$points = $mysqli->query("SELECT * FROM `points` WHERE `point_name` = 'two_part_two'");
 				$point_data = $points->fetch_object();
